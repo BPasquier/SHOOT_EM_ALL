@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Entity
 {
 
     [SerializeField] private Component m_MainCamera;
     [SerializeField] private int m_VerticalSpeed;
     [SerializeField] private int m_HorizontalSpeed;
     [SerializeField] private Vector3 ScreenPos;
-    public short HP;
-    [SerializeField] private short HP_Max;
-
+    private bool alive;
 
     void PlayerControl()
     {
@@ -26,25 +24,22 @@ public class Player : MonoBehaviour
             transform.position += new Vector3(-0.15f, 0, 0);
     }
 
-    void awake()
-    {
-        HP = HP_Max;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
         PlayerControl();
     }
-   
-    void OnCollisionEnter()
+
+    void OnCollisionEnter(Collision col)
     {
-        HP -= 3;
+        if (col.gameObject.tag == "Enemy")
+        {
+            HP -= 3;
+            if (HP <= 0)
+            {
+                alive = false;
+            }
+        }
     }
     
 }
