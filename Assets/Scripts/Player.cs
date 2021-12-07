@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class Player : Entity
 {
-
     [SerializeField] private Component m_MainCamera;
     [SerializeField] private int m_VerticalSpeed;
     [SerializeField] private int m_HorizontalSpeed;
     [SerializeField] private Vector3 ScreenPos;
-    public short HP;
-    [SerializeField] private short HP_Max;
-    [SerializeField] GameObject prefabBullet;
-    [SerializeField] float attackSpeed;
-
-    float savedTime = 0;
-
+    [SerializeField] private GameObject GameOver;
+    
+    
     void PlayerControl()
     {
         ScreenPos = Camera.main.WorldToScreenPoint(transform.position);
@@ -27,19 +22,17 @@ public class Player : Entity
             transform.position += new Vector3(0.15f, 0, 0);
         if (Input.GetKey(KeyCode.LeftArrow) == true && ScreenPos.x > 40)
             transform.position += new Vector3(-0.15f, 0, 0);
-        //Tir
-        if (Input.GetKey(KeyCode.Space) == true && (Time.time - savedTime > attackSpeed))
-        {
-            Instantiate(prefabBullet, transform.position + new Vector3(0f,0f,.5f), transform.rotation);
-            savedTime = Time.time;
-        }
-            
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         PlayerControl();
+        if (HP <= 0)
+        {
+            //faut aussi arreter les deplacements et empecher les rats de bouger
+            GameOver.SetActive(true);
+        }
     }
 
     void OnCollisionEnter(Collision col)
@@ -47,10 +40,7 @@ public class Player : Entity
         if (col.gameObject.tag == "Enemy")
         {
             HP -= 3;
-            if (HP <= 0)
-            {
-                alive = false;
-            }
+            print(HP);
         }
     }
     
