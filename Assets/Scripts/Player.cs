@@ -15,9 +15,9 @@ public class Player : MonoBehaviour
     void PlayerControl()
     {
         ScreenPos = Camera.main.WorldToScreenPoint(transform.position);
-        if (Input.GetKey(KeyCode.UpArrow) == true &&  ScreenPos.z < Screen.height *2/3)
+        if (Input.GetKey(KeyCode.UpArrow) == true &&  ScreenPos.y < Screen.height *2/3)
             transform.position += new Vector3(0, 0, 0.1f);
-        if (Input.GetKey(KeyCode.DownArrow) == true && ScreenPos.z > 4.8f)
+        if (Input.GetKey(KeyCode.DownArrow) == true && ScreenPos.y > 4.8f)
             transform.position += new Vector3(0, 0, -0.2f);
         if (Input.GetKey(KeyCode.RightArrow) == true && ScreenPos.x < Screen.width -40)
             transform.position += new Vector3(0.15f, 0, 0);
