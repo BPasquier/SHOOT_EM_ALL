@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Entity
 {
 
     [SerializeField] private Component m_MainCamera;
@@ -36,25 +36,22 @@ public class Player : MonoBehaviour
             
     }
 
-    void awake()
-    {
-        HP = HP_Max;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
         PlayerControl();
     }
-   
-    void OnCollisionEnter()
+
+    void OnCollisionEnter(Collision col)
     {
-        HP -= 3;
+        if (col.gameObject.tag == "Enemy")
+        {
+            HP -= 3;
+            if (HP <= 0)
+            {
+                alive = false;
+            }
+        }
     }
     
 }
