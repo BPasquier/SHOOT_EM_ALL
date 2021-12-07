@@ -6,7 +6,7 @@ public class Entity : MonoBehaviour
 {
     // Start is called before the first frame update
     public short HP;
-    [SerializeField] private short HP_Max;
+    [SerializeField] public short HP_Max;
 
     void Start()
     {

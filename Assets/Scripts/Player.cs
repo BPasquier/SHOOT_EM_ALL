@@ -35,6 +35,8 @@ public class Player : Entity
         if (col.gameObject.tag == "Enemy")
         {
             HP -= 3;
+            if (HP<0)
+                HP = 0;
             if (HP <= 0)
             {
                 alive = false;
