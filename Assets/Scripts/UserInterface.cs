@@ -15,6 +15,12 @@ public class UserInterface : MonoBehaviour
         activated = false;
     }
 
+    public void UnloadMenu()
+    {
+        Menu.SetActive(false);
+        activated = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -24,7 +30,7 @@ public class UserInterface : MonoBehaviour
                 Menu.SetActive(true);
                 activated = true;
             }
-            if (activated == true)
+           else if (activated == true)
             {
                 Menu.SetActive(false);
                 activated = false;
