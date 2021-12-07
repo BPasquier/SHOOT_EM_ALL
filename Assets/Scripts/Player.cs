@@ -11,7 +11,10 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector3 ScreenPos;
     public short HP;
     [SerializeField] private short HP_Max;
+    [SerializeField] GameObject prefabBullet;
+    [SerializeField] float attackSpeed;
 
+    float savedTime = 0;
 
     void PlayerControl()
     {
@@ -24,6 +27,13 @@ public class Player : MonoBehaviour
             transform.position += new Vector3(0.15f, 0, 0);
         if (Input.GetKey(KeyCode.LeftArrow) == true && ScreenPos.x > 40)
             transform.position += new Vector3(-0.15f, 0, 0);
+        //Tir
+        if (Input.GetKey(KeyCode.Space) == true && (Time.time - savedTime > attackSpeed))
+        {
+            Instantiate(prefabBullet, transform.position + new Vector3(0f,0f,.5f), transform.rotation);
+            savedTime = Time.time;
+        }
+            
     }
 
     void awake()

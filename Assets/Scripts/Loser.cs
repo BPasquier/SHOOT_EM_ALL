@@ -15,7 +15,7 @@ public class Loser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.hp <= 0)
+        if (player.HP <= 0)
             print("perdu");
     }
 }
