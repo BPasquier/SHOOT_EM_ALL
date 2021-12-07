@@ -45,10 +45,10 @@ MonoBehaviour:
   - title: Flash
     position:
       serializedVersion: 2
-      x: 1761
-      y: -269
-      width: 810
-      height: 1579
+      x: 1657
+      y: -228
+      width: 477
+      height: 1540
     contents:
     - model: {fileID: 8926484042661614644}
       id: 0
@@ -65,10 +65,10 @@ MonoBehaviour:
   - title: Sparks
     position:
       serializedVersion: 2
-      x: 2917
-      y: -261
-      width: 478
-      height: 1896
+      x: 2479
+      y: -220
+      width: 476
+      height: 879
     contents:
     - model: {fileID: 8926484042661614740}
       id: 0
@@ -80,10 +80,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 641
-    y: -269
-    width: 2752
-    height: 1881
+    x: 642
+    y: -248
+    width: 2314
+    height: 1900
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,7 +131,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":2.1185474395751955,"g":1.3310245275497437,"b":0.05545935779809952,"a":1.0}'
+      m_SerializableObject: '{"r":95.87451171875,"g":82.32157135009766,"b":0.0,"a":0.4745098054409027}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -145,7 +145,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.3072531521320343,"g":0.15021264553070069,"b":1.3041188716888428,"a":0.7215686440467835}'
+      m_SerializableObject: '{"r":0.3607843220233917,"g":0.1725490242242813,"b":1.4980392456054688,"a":1.0}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -1762,7 +1762,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614646}
-  m_UIPosition: {x: 2120, y: -210}
+  m_UIPosition: {x: 1682, y: -170}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -1816,7 +1816,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614644}
   m_Children: []
-  m_UIPosition: {x: 1054.5563, y: -465.12738}
+  m_UIPosition: {x: 0, y: 2}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1873,7 +1873,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614659}
-  m_UIPosition: {x: 2120, y: 94}
+  m_UIPosition: {x: 1682, y: 134}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2238,7 +2238,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614648}
   m_Children: []
-  m_UIPosition: {x: 1054.5563, y: -465.12738}
+  m_UIPosition: {x: 0, y: 2}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2334,7 +2334,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 2122, y: 487}
+  m_UIPosition: {x: 1684, y: 527}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -2373,7 +2373,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614705}
   - {fileID: 8926484042661614680}
   - {fileID: 8926484042661614677}
-  m_UIPosition: {x: 2122, y: 618}
+  m_UIPosition: {x: 1684, y: 658}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2423,7 +2423,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614664}
   m_Children: []
-  m_UIPosition: {x: 1054.5563, y: -465.12738}
+  m_UIPosition: {x: 0, y: 2}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -2446,7 +2446,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614664}
   m_Children: []
-  m_UIPosition: {x: 821.1736, y: -522.6995}
+  m_UIPosition: {x: 0, y: 284}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2542,7 +2542,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614664}
   m_Children: []
-  m_UIPosition: {x: 1054.5563, y: -465.12738}
+  m_UIPosition: {x: 0, y: 173}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2639,7 +2639,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614664}
   m_Children: []
-  m_UIPosition: {x: 0, y: 0}
+  m_UIPosition: {x: 0, y: 76}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2862,7 +2862,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":2.1185474395751955,"g":1.3310245275497437,"b":0.05545935779809952,"a":1.0}'
+      m_SerializableObject: '{"r":95.87451171875,"g":82.32157135009766,"b":0.0,"a":0.4745098054409027}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -3046,7 +3046,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614731}
       inputSlot: {fileID: 8926484042661614706}
-    position: {x: 1940.7999, y: 944.8}
+    position: {x: 1502.3999, y: 984.8}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614731
@@ -3078,7 +3078,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.3072531521320343,"g":0.15021264553070069,"b":1.3041188716888428,"a":0.7215686440467835}'
+      m_SerializableObject: '{"r":0.3607843220233917,"g":0.1725490242242813,"b":1.4980392456054688,"a":1.0}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -3236,7 +3236,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614738}
-  m_UIPosition: {x: 2942, y: -202}
+  m_UIPosition: {x: 2504, y: -162}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -3290,7 +3290,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614736}
   m_Children: []
-  m_UIPosition: {x: 1995.1476, y: -115.173584}
+  m_UIPosition: {x: 0, y: 2}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -3348,7 +3348,7 @@ MonoBehaviour:
   m_Children:
   - {fileID: 8926484042661614804}
   - {fileID: 8926484042661614813}
-  m_UIPosition: {x: 2944, y: 105}
+  m_UIPosition: {x: 2506, y: 145}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -3714,7 +3714,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614817}
-  m_UIPosition: {x: 2944, y: 573}
+  m_UIPosition: {x: 2506, y: 613}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -3754,7 +3754,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614789}
   - {fileID: 8926484042661614771}
   - {fileID: 8926484042661614793}
-  m_UIPosition: {x: 2946, y: 853}
+  m_UIPosition: {x: 2508, y: 893}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -3838,7 +3838,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614767}
   m_Children: []
-  m_UIPosition: {x: 1995.1476, y: -115.173584}
+  m_UIPosition: {x: 0, y: 2}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -3861,7 +3861,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614767}
   m_Children: []
-  m_UIPosition: {x: 1995.1476, y: -115.173584}
+  m_UIPosition: {x: 0, y: 304}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -3924,7 +3924,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614767}
   m_Children: []
-  m_UIPosition: {x: 0, y: 0}
+  m_UIPosition: {x: 0, y: 76}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -4224,7 +4224,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614767}
   m_Children: []
-  m_UIPosition: {x: 0, y: 0}
+  m_UIPosition: {x: 0, y: 207}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -4320,7 +4320,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614767}
   m_Children: []
-  m_UIPosition: {x: 0, y: 0}
+  m_UIPosition: {x: 0, y: 415}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -4484,7 +4484,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614740}
   m_Children: []
-  m_UIPosition: {x: 0, y: 0}
+  m_UIPosition: {x: 0, y: 2}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -4782,7 +4782,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614740}
   m_Children: []
-  m_UIPosition: {x: 0, y: 0}
+  m_UIPosition: {x: 0, y: 209}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -4878,7 +4878,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614765}
   m_Children: []
-  m_UIPosition: {x: 0, y: 0}
+  m_UIPosition: {x: 0, y: 2}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -5245,7 +5245,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 2689, y: 660}
+  m_UIPosition: {x: 2251, y: 700}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -5435,7 +5435,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614834}
       inputSlot: {fileID: 8926484042661614794}
-    position: {x: 2760, y: 1528}
+    position: {x: 2321.5999, y: 1568}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614834
