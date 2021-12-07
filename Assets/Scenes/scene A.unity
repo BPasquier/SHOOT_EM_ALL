@@ -805,6 +805,7 @@ MonoBehaviour:
   m_MainCamera: {fileID: 931452499}
   m_VerticalSpeed: 0
   m_HorizontalSpeed: 0
+  ScreenPos: {x: 0, y: 0, z: 0}
 --- !u!1 &3439825273723383918
 GameObject:
   m_ObjectHideFlags: 0
