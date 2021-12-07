@@ -35,6 +35,5 @@ public class UserInterface : MonoBehaviour
                 Menu.SetActive(false);
                 activated = false;
             }
-                
     }
 }
