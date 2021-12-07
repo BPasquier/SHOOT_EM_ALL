@@ -6,10 +6,11 @@ public class Player : Entity
 {
 
     [SerializeField] private Component m_MainCamera;
+    [SerializeField] private Vector3 ScreenPos;
+    [SerializeField] private GameObject bullet;
     [SerializeField] private int m_VerticalSpeed;
     [SerializeField] private int m_HorizontalSpeed;
-    [SerializeField] private Vector3 ScreenPos;
-    private bool alive;
+    [SerializeField] float timeBetweenEnemies;
 
     void PlayerControl()
     {
@@ -30,6 +31,22 @@ public class Player : Entity
         PlayerControl();
     }
 
+    void Start()
+    {
+        timeBetweenEnemies = 1;
+        HP = HP_Max;
+        StartCoroutine(SpawnEnemy());
+    }
+
+    IEnumerator SpawnEnemy()
+    {
+        while (Application.isPlaying)
+        {
+            GameObject obj = Instantiate(bullet, transform.position + new Vector3(0f, 0f, 1f), Quaternion.Euler(0f,0f,0f));
+            yield return new WaitForSeconds(timeBetweenEnemies);
+        }
+    }
+
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Enemy")
@@ -37,10 +54,6 @@ public class Player : Entity
             HP -= 3;
             if (HP<0)
                 HP = 0;
-            if (HP <= 0)
-            {
-                alive = false;
-            }
         }
     }
     
