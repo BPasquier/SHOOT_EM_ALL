@@ -18,7 +18,10 @@ public class Bullet : Entity
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position += new Vector3(0f, 0f, -speed);
+        transform.position += new Vector3(0f, 0f, speed);
+        Vector3 posFromScreen = Camera.main.WorldToScreenPoint(transform.position);
+        if (Input.GetKey(KeyCode.UpArrow) == true && posFromScreen.y > Screen.height * 1)
+            Destroy(gameObject);
     }
     private void Update()
     {
