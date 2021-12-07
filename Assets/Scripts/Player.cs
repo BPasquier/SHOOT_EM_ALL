@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] private int m_VerticalSpeed;
     [SerializeField] private int m_HorizontalSpeed;
     [SerializeField] private Vector3 ScreenPos;
-    
+    public short HP;
+    [SerializeField] private short HP_Max;
 
 
     void PlayerControl()
@@ -23,7 +24,11 @@ public class Player : MonoBehaviour
             transform.position += new Vector3(0.15f, 0, 0);
         if (Input.GetKey(KeyCode.LeftArrow) == true && ScreenPos.x > 40)
             transform.position += new Vector3(-0.15f, 0, 0);
+    }
 
+    void awake()
+    {
+        HP = HP_Max;
     }
     // Start is called before the first frame update
     void Start()
@@ -36,4 +41,10 @@ public class Player : MonoBehaviour
     {
         PlayerControl();
     }
+   
+    void OnCollisionEnter()
+    {
+        HP -= 3;
+    }
+    
 }
