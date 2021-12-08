@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UserInterface : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private GameObject Menu;
+
     [SerializeField] private GameObject GOver;
     private bool activated;
+
+    [SerializeField] private Scene Scene;
+    private string sceneName;
 
 
     // Start is called before the first frame update
@@ -16,10 +21,11 @@ public class UserInterface : MonoBehaviour
         activated = false;
     }
 
-    public void UnloadMenu()
+    public void RLoad()
     {
-        Menu.SetActive(false);
-        activated = false;
+        Scene = SceneManager.GetActiveScene();
+        sceneName = Scene.name;
+        SceneManager.LoadScene(sceneName);
     }
 
     // Update is called once per frame
@@ -41,11 +47,13 @@ public class UserInterface : MonoBehaviour
             if (activated == false)
             {
                 Menu.SetActive(true);
+                Time.timeScale = 0;
                 activated = true;
             }
            else if (activated == true)
             {
                 Menu.SetActive(false);
+                Time.timeScale = 1;
                 activated = false;
             }
     }
