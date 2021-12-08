@@ -14,6 +14,7 @@ public class Bullet : Entity
     private void Start()
     {
         sinceBorn = Time.time;
+        HP = HP_Max;
     }
     // Update is called once per frame
     void FixedUpdate()
