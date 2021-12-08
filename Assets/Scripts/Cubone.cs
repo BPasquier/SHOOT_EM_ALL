@@ -8,13 +8,13 @@ public class Cubone : Entity
     float range;
     Animator anim;
     bool isAttacking = false;
-    [SerializeField]
     GameObject player; //chopper le player avec tag ?
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        player = transform.parent.GetComponent<EnemiesManager>().player;
     }
 
     // Update is called once per frame

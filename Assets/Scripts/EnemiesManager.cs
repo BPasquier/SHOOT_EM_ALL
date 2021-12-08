@@ -10,6 +10,7 @@ public class EnemiesManager : MonoBehaviour
     int[] enemyPercentages;
     [SerializeField]
     float timeBetweenEnemies;
+    public GameObject player;
     int i;
 
     private void Start()
@@ -29,6 +30,7 @@ public class EnemiesManager : MonoBehaviour
                 percentSum += enemyPercentages[i];
             }
             GameObject obj = Instantiate(enemyTab[i-1], Camera.main.ScreenToWorldPoint(new Vector3(0f, 0f, 0f)) + new Vector3(Random.Range(-9f, 9f), -9.5f, 10f), Quaternion.Euler(0f, 180f, 0f));
+            obj.transform.parent = transform;
             yield return new WaitForSeconds(timeBetweenEnemies);
         }
     }
