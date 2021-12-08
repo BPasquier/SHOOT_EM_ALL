@@ -6,7 +6,7 @@ public class Player : Entity
 {
 
     [SerializeField] private Component m_MainCamera;
-    [SerializeField] private Vector3 ScreenPos;
+    [SerializeField] private Vector3 ScreenPos; 
     [SerializeField] private GameObject bullet;
     [SerializeField] private int m_VerticalSpeed;
     [SerializeField] private int m_HorizontalSpeed;
@@ -36,6 +36,7 @@ public class Player : Entity
         timeBetweenEnemies = 1;
         HP = HP_Max;
         StartCoroutine(SpawnEnemy());
+        HitAction.OnBulletHit() += Score();
     }
 
     IEnumerator SpawnEnemy()
@@ -61,7 +62,7 @@ public class Player : Entity
         }
     }
 
-    void OnBulletHit()
+    void Score()
     {
         score += 1;
     }

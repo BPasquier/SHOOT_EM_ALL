@@ -14,6 +14,9 @@ public class Enemy : Entity
     float dureeAttack;
     Animator anim;
 
+    public delegate void EventSystem();
+    public static event EventSystem OnBulletHit;
+
     float timeLastCollision;
     float sinceBorn;
 
@@ -44,6 +47,11 @@ public class Enemy : Entity
             Debug.Log("attack");
             anim.SetBool("attack", true);
             timeLastCollision = Time.time;
+        }
+        if (collision.gameObject.tag == "Bullet")
+        {
+            OnBulletHit();
+            HP -=1;
         }
     }
 }
