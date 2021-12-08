@@ -8,7 +8,7 @@ public class Bullet : Entity
     float speed;
     [SerializeField]
     float timeAlive;
-
+    [SerializeField] public float Dammage;
     float sinceBorn;
 
     private void Start()
@@ -23,24 +23,12 @@ public class Bullet : Entity
         Vector3 posFromScreen = Camera.main.WorldToScreenPoint(transform.position);
         if (posFromScreen.y > Screen.height * 1)
             Destroy(gameObject);
+
     }
     private void Update()
     {
         if (Time.time > sinceBorn + timeAlive)
             Destroy(gameObject);
         //or if hors champ
-    }
-
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.tag == "Enemy")
-        {
-            HP -= 1;
-            if (HP<=0)
-            {
-                HP = 0;
-                Destroy(gameObject);
-            }
-        }
     }
 }

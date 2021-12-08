@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Entity
 {
 
     [SerializeField] private Component m_MainCamera;
-    [SerializeField] private Vector3 ScreenPos; 
+    [SerializeField] private Vector3 ScreenPos;
     [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject Text_Score;
     [SerializeField] private int m_VerticalSpeed;
     [SerializeField] private int m_HorizontalSpeed;
     [SerializeField] float timeBetweenEnemies;
+
     public int score;
+
     void PlayerControl()
     {
         ScreenPos = Camera.main.WorldToScreenPoint(transform.position);
@@ -29,14 +33,14 @@ public class Player : Entity
     void FixedUpdate()
     {
         PlayerControl();
+        Text_Score.GetComponent<Text>().text = "Score : " + score;
     }
 
     void Start()
     {
-        timeBetweenEnemies = 1;
         HP = HP_Max;
         StartCoroutine(SpawnEnemy());
-        HitAction.OnBulletHit() += Score();
+        Enemy.OnBulletHit += Score;
     }
 
     IEnumerator SpawnEnemy()

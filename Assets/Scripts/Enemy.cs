@@ -14,17 +14,18 @@ public class Enemy : Entity
     float dureeAttack;
     Animator anim;
 
-    public delegate void EventSystem();
-    public static event EventSystem OnBulletHit;
-
     float timeLastCollision;
     float sinceBorn;
+
+    public delegate void OnHitAction();
+    public static event OnHitAction OnBulletHit;
 
     private void Start()
     {
         sinceBorn = Time.time;
         anim = GetComponent<Animator>();
         timeLastCollision = Time.time - dureeAttack;
+        HP = HP_Max;
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -33,15 +34,13 @@ public class Enemy : Entity
             transform.position += new Vector3(0f, 0f, -speed);
     }
     private void Update()
-    {        
-
+    {
         if (Time.time > sinceBorn + timeAlive)
             Destroy(gameObject);
         //or if hors champ
     }
     private void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log("OnCollisionEnter()");
         if (range <= 1f && collision.transform.tag == "Player")
         {
             Debug.Log("attack");
@@ -50,8 +49,15 @@ public class Enemy : Entity
         }
         if (collision.gameObject.tag == "Bullet")
         {
-            OnBulletHit();
-            HP -=1;
+            HP -= collision.gameObject.GetComponent<Bullet>().Dammage;
+            if (HP<=0)
+            {
+                Destroy(gameObject);
+                OnBulletHit();
+            }
+            collision.gameObject.GetComponent<Bullet>().HP -=1;
+            if (collision.gameObject.GetComponent<Bullet>().HP <= 0)
+                Destroy(collision.gameObject);
         }
     }
 }
