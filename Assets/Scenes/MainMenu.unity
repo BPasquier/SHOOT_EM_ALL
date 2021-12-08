@@ -1441,7 +1441,7 @@ MonoBehaviour:
     POIGNET\n\nMerci \xE0 GameFreak pour les models 3D !"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: -7120697925717103698, guid: 7d7f1cf589e0e624ab2d0ace9b6a3051, type: 2}
+  m_sharedMaterial: {fileID: 0}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1793,7 +1793,7 @@ MonoBehaviour:
   m_text: Gotta Shoot 'em 'all !
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7d7f1cf589e0e624ab2d0ace9b6a3051, type: 2}
-  m_sharedMaterial: {fileID: -7120697925717103698, guid: 7d7f1cf589e0e624ab2d0ace9b6a3051, type: 2}
+  m_sharedMaterial: {fileID: 8088288899884090813, guid: 7d7f1cf589e0e624ab2d0ace9b6a3051, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1876,8 +1876,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1639140813}
-  - component: {fileID: 1639140814}
   - component: {fileID: 1639140815}
+  - component: {fileID: 1639140814}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
