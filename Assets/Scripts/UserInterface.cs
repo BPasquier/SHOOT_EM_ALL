@@ -47,11 +47,13 @@ public class UserInterface : MonoBehaviour
             if (activated == false)
             {
                 Menu.SetActive(true);
+                Time.timeScale = 0;
                 activated = true;
             }
            else if (activated == true)
             {
                 Menu.SetActive(false);
+                Time.timeScale = 1;
                 activated = false;
             }
     }
