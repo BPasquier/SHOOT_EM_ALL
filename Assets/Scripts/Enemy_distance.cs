@@ -25,7 +25,7 @@ public class Enemy_distance : Entity
     {
         if (sinceBorn + 2.2 > Time.time) //avance en haut du terrain
         {
-            Debug.Log("avance");
+            //Debug.Log("avance");
             transform.position += new Vector3(0f, 0f, -.05f);
             timeBeginningAttack = Time.time;
         }
@@ -44,7 +44,7 @@ public class Enemy_distance : Entity
             anim.SetBool("attack", false);
             transform.position += new Vector3(0f, 0f, 0.05f);
         }
-        else //est détruit
+        else //est dï¿½truit
         {
             Destroy(gameObject);
         }

@@ -157,6 +157,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 15
   HP_Max: 15
-  speed: 0.05
-  timeAlive: 5
+  speed: 0.03
+  timeAlive: 15
   Dammage: 10
