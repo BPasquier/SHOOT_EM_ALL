@@ -49,7 +49,7 @@ public class Enemy : Entity
         }
         if (collision.gameObject.tag == "Bullet")
         {
-            HP -= 1;
+            HP -= collision.gameObject.GetComponent<Bullet>().Dammage;
             if (HP<=0)
             {
                 Destroy(gameObject);

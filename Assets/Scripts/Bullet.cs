@@ -8,7 +8,7 @@ public class Bullet : Entity
     float speed;
     [SerializeField]
     float timeAlive;
-
+    [SerializeField] public float Dammage;
     float sinceBorn;
 
     private void Start()
