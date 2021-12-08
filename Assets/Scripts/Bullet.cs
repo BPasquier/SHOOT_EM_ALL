@@ -8,12 +8,13 @@ public class Bullet : Entity
     float speed;
     [SerializeField]
     float timeAlive;
-
+    [SerializeField] public float Dammage;
     float sinceBorn;
 
     private void Start()
     {
         sinceBorn = Time.time;
+        HP = HP_Max;
     }
     // Update is called once per frame
     void FixedUpdate()

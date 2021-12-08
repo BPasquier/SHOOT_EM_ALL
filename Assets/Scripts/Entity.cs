@@ -5,8 +5,8 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     // Start is called before the first frame update
-    public short HP;
-    [SerializeField] public short HP_Max;
+    public float HP;
+    [SerializeField] public float HP_Max;
 
     void Start()
     {
