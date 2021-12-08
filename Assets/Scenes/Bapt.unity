@@ -4040,7 +4040,7 @@ MonoBehaviour:
   Text_Score: {fileID: 1077770633}
   m_VerticalSpeed: 0
   m_HorizontalSpeed: 0
-  timeBetweenEnemies: 0.01
+  timeBetweenEnemies: 0.43
   score: 0
 --- !u!65 &1459632768
 BoxCollider:

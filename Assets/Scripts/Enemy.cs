@@ -55,7 +55,9 @@ public class Enemy : Entity
                 Destroy(gameObject);
                 OnBulletHit();
             }
-
+            collision.gameObject.GetComponent<Bullet>().HP -=1;
+            if (collision.gameObject.GetComponent<Bullet>().HP <= 0)
+                Destroy(collision.gameObject);
         }
     }
 }

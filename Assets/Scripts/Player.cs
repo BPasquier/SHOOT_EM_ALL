@@ -38,7 +38,6 @@ public class Player : Entity
 
     void Start()
     {
-        timeBetweenEnemies = 1;
         HP = HP_Max;
         StartCoroutine(SpawnEnemy());
         Enemy.OnBulletHit += Score;
