@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  HP_Max: 0
+  HP_Max: 1
   speed: 0.15
   timeAlive: 5
 --- !u!65 &7309071385677565922
