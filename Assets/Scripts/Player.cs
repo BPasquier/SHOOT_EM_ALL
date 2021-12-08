@@ -6,15 +6,11 @@ public class Player : Entity
 {
 
     [SerializeField] private Component m_MainCamera;
+    [SerializeField] private Vector3 ScreenPos;
+    [SerializeField] private GameObject bullet;
     [SerializeField] private int m_VerticalSpeed;
     [SerializeField] private int m_HorizontalSpeed;
-    [SerializeField] private Vector3 ScreenPos;
-    public short HP;
-    [SerializeField] private short HP_Max;
-    [SerializeField] GameObject prefabBullet;
-    [SerializeField] float attackSpeed;
-
-    float savedTime = 0;
+    [SerializeField] float timeBetweenEnemies;
 
     void PlayerControl()
     {
@@ -27,13 +23,6 @@ public class Player : Entity
             transform.position += new Vector3(0.15f, 0, 0);
         if (Input.GetKey(KeyCode.LeftArrow) == true && ScreenPos.x > 40)
             transform.position += new Vector3(-0.15f, 0, 0);
-        //Tir
-        if (Input.GetKey(KeyCode.Space) == true && (Time.time - savedTime > attackSpeed))
-        {
-            Instantiate(prefabBullet, transform.position + new Vector3(0f,0f,.5f), transform.rotation);
-            savedTime = Time.time;
-        }
-            
     }
 
     // Update is called once per frame
@@ -42,15 +31,30 @@ public class Player : Entity
         PlayerControl();
     }
 
+    void Start()
+    {
+        timeBetweenEnemies = 1;
+        HP = HP_Max;
+        StartCoroutine(SpawnEnemy());
+    }
+
+    IEnumerator SpawnEnemy()
+    {
+        while (Application.isPlaying)
+        {
+            GameObject obj = Instantiate(bullet, transform.position + new Vector3(0f, 0f, 1f), Quaternion.Euler(0f,0f,0f));
+            yield return new WaitForSeconds(timeBetweenEnemies);
+        
+        }
+    }
+
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Enemy")
         {
             HP -= 3;
-            if (HP <= 0)
-            {
-                alive = false;
-            }
+            if (HP<0)
+                HP = 0;
         }
     }
     

@@ -20,8 +20,9 @@ public class Bullet : Entity
     {
         transform.position += new Vector3(0f, 0f, speed);
         Vector3 posFromScreen = Camera.main.WorldToScreenPoint(transform.position);
-        if (Input.GetKey(KeyCode.UpArrow) == true && posFromScreen.y > Screen.height * 1)
+        if (posFromScreen.y > Screen.height * 1)
             Destroy(gameObject);
+
     }
     private void Update()
     {

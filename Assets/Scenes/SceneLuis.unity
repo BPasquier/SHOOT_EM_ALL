@@ -3196,14 +3196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ffe31c6095ec814db3483e50990f62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
+  HP_Max: 20
   m_MainCamera: {fileID: 394778386}
   m_VerticalSpeed: 0
   m_HorizontalSpeed: 0
   ScreenPos: {x: 0, y: 0, z: 0}
-  HP: 0
-  HP_Max: 20
-  prefabBullet: {fileID: 4666245217911035029, guid: 0bfd646fb0ca9ac41b81ede93e3bee21, type: 3}
-  attackSpeed: 1
 --- !u!65 &1314763174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3261,14 +3259,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ffe31c6095ec814db3483e50990f62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
+  HP_Max: 20
   m_MainCamera: {fileID: 394778386}
   m_VerticalSpeed: 0
   m_HorizontalSpeed: 0
   ScreenPos: {x: 0, y: 0, z: 0}
-  HP: 0
-  HP_Max: 20
-  prefabBullet: {fileID: 4666245217911035029, guid: 0bfd646fb0ca9ac41b81ede93e3bee21, type: 3}
-  attackSpeed: 1
 --- !u!65 &1325364182
 BoxCollider:
   m_ObjectHideFlags: 0
