@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  HP_Max: 0
+  HP_Max: 2
   speed: 0.1
   timeAlive: 5
   range: 0.5
