@@ -11,7 +11,7 @@ public class Player : Entity
     [SerializeField] private int m_VerticalSpeed;
     [SerializeField] private int m_HorizontalSpeed;
     [SerializeField] float timeBetweenEnemies;
-    public int score;
+
     void PlayerControl()
     {
         ScreenPos = Camera.main.WorldToScreenPoint(transform.position);
@@ -53,17 +53,9 @@ public class Player : Entity
         if (col.gameObject.tag == "Enemy")
         {
             HP -= 3;
-            if (HP<=0)
-            {
+            if (HP<0)
                 HP = 0;
-                Destroy(gameObject);
-            }
         }
-    }
-
-    void OnBulletHit()
-    {
-        score += 1;
     }
     
 }
