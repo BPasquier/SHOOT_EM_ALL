@@ -810,7 +810,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: MainMenu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1238,8 +1238,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1913421961}
-        m_TargetAssemblyTypeName: Reload, Assembly-CSharp
+      - m_Target: {fileID: 1913421962}
+        m_TargetAssemblyTypeName: UserInterface, Assembly-CSharp
         m_MethodName: RLoad
         m_Mode: 1
         m_Arguments:
@@ -2048,7 +2048,7 @@ GameObject:
   - component: {fileID: 1551648928}
   - component: {fileID: 1551648927}
   m_Layer: 0
-  m_Name: Exit
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2117,7 +2117,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1551648928}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1913421961}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: ReturnMenuFromCampain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1551648928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2579,8 +2591,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1913421960}
-  - component: {fileID: 1913421961}
   - component: {fileID: 1913421962}
+  - component: {fileID: 1913421961}
   m_Layer: 0
   m_Name: Interface
   m_TagString: Untagged
@@ -2612,11 +2624,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1913421959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65b27c5cffd25c64380a2217ced45d15, type: 3}
+  m_Script: {fileID: 11500000, guid: 58ad1a7baba0eea4ca179a99a06945f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scene:
-    m_Handle: 0
 --- !u!114 &1913421962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2631,6 +2641,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 4129507537606885278}
   Menu: {fileID: 1645100498}
+  GOver: {fileID: 0}
+  Scene:
+    m_Handle: 0
 --- !u!1 &1928834226
 GameObject:
   m_ObjectHideFlags: 0
@@ -2879,7 +2892,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1913421961}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Reload, Assembly-CSharp
         m_MethodName: RLoad
         m_Mode: 1
@@ -3641,10 +3654,11 @@ MonoBehaviour:
   HP: 0
   HP_Max: 30
   m_MainCamera: {fileID: 641846965}
+  ScreenPos: {x: 0, y: 0, z: 0}
+  bullet: {fileID: 0}
   m_VerticalSpeed: 0
   m_HorizontalSpeed: 0
-  ScreenPos: {x: 0, y: 0, z: 0}
-  GameOver: {fileID: 0}
+  timeBetweenEnemies: 0
 --- !u!54 &4129507537606885279
 Rigidbody:
   m_ObjectHideFlags: 0
