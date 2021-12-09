@@ -42,7 +42,7 @@ public class Cubone : Entity
             anim.SetBool("isAttacking", true);
         }
         //avance sinon
-        if (Vector3.Distance(transform.position, player.transform.position) > range && transform.position.z > player.transform.position.z - 0.2f)
+        if (Vector3.Distance(transform.position, player.transform.position) > range || transform.position.z < player.transform.position.z - 0.2f)
         {
             isAttacking = false;
             anim.SetBool("isAttacking", false);
