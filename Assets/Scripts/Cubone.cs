@@ -8,7 +8,7 @@ public class Cubone : Entity
     float range;
     Animator anim;
     bool isAttacking = false;
-    GameObject player; //chopper le player avec tag ?
+    GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class Cubone : Entity
     private void FixedUpdate()
     {
         //attaque si a la bonne distance du player
-        if (Vector3.Distance(transform.position, player.transform.position) < range && transform.position.z > player.transform.position.z - 0.2f)
+        if (Vector3.Distance(transform.position, player.transform.position) < range && transform.position.z > player.transform.position.z - 0.2f && isAttacking == false)
         {
             isAttacking = true;
 
@@ -42,9 +42,10 @@ public class Cubone : Entity
             anim.SetBool("isAttacking", true);
         }
         //avance sinon
-        else
+        if (Vector3.Distance(transform.position, player.transform.position) > range && transform.position.z > player.transform.position.z - 0.2f)
         {
             isAttacking = false;
+            anim.SetBool("isAttacking", false);
             transform.position += new Vector3(0f, 0f, -.05f);
         }
     }
