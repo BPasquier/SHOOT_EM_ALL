@@ -565,7 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3abe5a6426d58ad478933eb20cc2648e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joueur: {fileID: 0}
+  joueur: {fileID: 626682009}
   slider: {fileID: 237600532}
 --- !u!114 &237600532
 MonoBehaviour:
@@ -2183,7 +2183,7 @@ MonoBehaviour:
   m_MainCamera: {fileID: 1803655949}
   ScreenPos: {x: 0, y: 0, z: 0}
   bullet: {fileID: 4666245217911035029, guid: 0bfd646fb0ca9ac41b81ede93e3bee21, type: 3}
-  Score_Text: {fileID: 878801620}
+  Score_Text: {fileID: 2119781026}
   m_VerticalSpeed: 0
   m_HorizontalSpeed: 0
   timeBetweenEnemies: 0.45
