@@ -2634,6 +2634,7 @@ MonoBehaviour:
   - {fileID: 9177476827093542764, guid: e662d71851b131f44a656adbc33713bf, type: 3}
   enemyPercentages: 320000001e00000014000000
   timeBetweenEnemies: 4
+  player: {fileID: 0}
 --- !u!4 &933361413
 Transform:
   m_ObjectHideFlags: 0
@@ -3823,9 +3824,11 @@ MonoBehaviour:
   m_MainCamera: {fileID: 394778386}
   ScreenPos: {x: 0, y: 0, z: 0}
   bullet: {fileID: 4666245217911035029, guid: 0bfd646fb0ca9ac41b81ede93e3bee21, type: 3}
+  Score_Text: {fileID: 0}
   m_VerticalSpeed: 0
   m_HorizontalSpeed: 0
   timeBetweenEnemies: 0
+  score: 0
 --- !u!65 &1325364182
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6939,10 +6942,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f9a6866f4995b40b1bfb6a787b75d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  HP_Max: 0
+  HP: 10
+  HP_Max: 10
   range: 7
-  player: {fileID: 919132148672429059}
 --- !u!1 &2682685132772708594
 GameObject:
   m_ObjectHideFlags: 0
