@@ -1922,8 +1922,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db1e790f707f7c4e9044153d11ead64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ennemy: {fileID: 8896877989104511456, guid: c030e8287e39f5f4eb67184af0d8b48a, type: 3}
+  enemyTab:
+  - {fileID: 8896877989104511456, guid: c030e8287e39f5f4eb67184af0d8b48a, type: 3}
+  - {fileID: 4316121768385798227, guid: 249ea732bf1a67b45b6dfe3a00a2f9cb, type: 3}
+  - {fileID: 9177476827093542764, guid: e662d71851b131f44a656adbc33713bf, type: 3}
+  enemyPercentages: 460000000a00000014000000
   timeBetweenEnemies: 2
+  player: {fileID: 1459632765}
 --- !u!4 &746420518
 Transform:
   m_ObjectHideFlags: 0
@@ -2484,6 +2489,8 @@ MonoBehaviour:
   player: {fileID: 1459632767}
   Menu: {fileID: 1929977174}
   GOver: {fileID: 654348913}
+  Scene:
+    m_Handle: 0
 --- !u!4 &962888044
 Transform:
   m_ObjectHideFlags: 0
@@ -3926,7 +3933,7 @@ MonoBehaviour:
   m_MainCamera: {fileID: 2150991}
   ScreenPos: {x: 0, y: 0, z: 0}
   bullet: {fileID: 4666245217911035029, guid: 0bfd646fb0ca9ac41b81ede93e3bee21, type: 3}
-  Text_Score: {fileID: 1077770633}
+  Score_Text: {fileID: 1077770633}
   m_VerticalSpeed: 0
   m_HorizontalSpeed: 0
   timeBetweenEnemies: 0.43
@@ -5796,7 +5803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5754357131218933536, guid: 7b6bd78578b7ed04380bb52faa8b156b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5754357131218933536, guid: 7b6bd78578b7ed04380bb52faa8b156b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5857,6 +5864,10 @@ PrefabInstance:
     - target: {fileID: 5754357131218933543, guid: 7b6bd78578b7ed04380bb52faa8b156b, type: 3}
       propertyPath: m_Name
       value: GenkidamaElec
+      objectReference: {fileID: 0}
+    - target: {fileID: 5754357131218933543, guid: 7b6bd78578b7ed04380bb52faa8b156b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b6bd78578b7ed04380bb52faa8b156b, type: 3}

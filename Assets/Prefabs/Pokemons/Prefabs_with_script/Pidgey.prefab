@@ -681,7 +681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 10
-  HP_Max: 10
+  HP_Max: 4
   timeAlive: 5
   dureeAttack: 0.68
   bulletPrefab: {fileID: 1342716257858188746, guid: ea187ed981bf1a74783bb8e0da533c4d, type: 3}

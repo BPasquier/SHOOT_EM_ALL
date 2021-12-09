@@ -43,7 +43,7 @@ public class Enemy : Entity
     {
         if (range <= 1f && collision.transform.tag == "Player")
         {
-            Debug.Log("attack");
+            //Debug.Log("attack");
             anim.SetBool("attack", true);
             timeLastCollision = Time.time;
         }
