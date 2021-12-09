@@ -12,7 +12,7 @@ public class Player : Entity
     [SerializeField] private GameObject Score_Text;
     [SerializeField] private int m_VerticalSpeed;
     [SerializeField] private int m_HorizontalSpeed;
-    [SerializeField] float timeBetweenEnemies;
+    [SerializeField] float timeBetweenBullet;
     public int score;
     void PlayerControl()
     {
@@ -37,15 +37,15 @@ public class Player : Entity
     {
         HP = HP_Max;
         Enemy.OnBulletHit += Score;
-        StartCoroutine(SpawnEnemy());
+        StartCoroutine(SpawnBullet());
     }
 
-    IEnumerator SpawnEnemy()
+    IEnumerator SpawnBullet()
     {
         while (Application.isPlaying)
         {
             GameObject obj = Instantiate(bullet, transform.position + new Vector3(0f, 0f, 1f), Quaternion.Euler(0f,0f,0f));
-            yield return new WaitForSeconds(timeBetweenEnemies);
+            yield return new WaitForSeconds(timeBetweenBullet);
         
         }
     }
