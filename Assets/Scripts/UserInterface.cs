@@ -47,6 +47,7 @@ public class UserInterface : MonoBehaviour
                 activated = false;
             }
             GOver.SetActive(true);
+            Time.timeScale = 0;
         }
 
         //menu echap
