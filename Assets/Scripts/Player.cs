@@ -32,6 +32,11 @@ public class Player : Entity
     {
         PlayerControl();
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown("space"))
+            StartCoroutine(Dash(.2f, 30f));
+    }
 
     void Start()
     {
@@ -69,4 +74,29 @@ public class Player : Entity
         Score_Text.GetComponent<Text>().text = "Score : " + score;
     }
     
+    IEnumerator Dash(float dashTime , float dashSpeed)
+    {
+        float left = 0, right = 0, up = 0, down=0;
+        if (Input.GetKey(KeyCode.UpArrow) == true)
+            up = 1;
+        if (Input.GetKey(KeyCode.DownArrow) == true)
+            down = 1;
+        if (Input.GetKey(KeyCode.RightArrow) == true)
+            right = 1;
+        if (Input.GetKey(KeyCode.LeftArrow) == true)
+            left = 1;
+        float startTime = Time.time;
+        while(Time.time < startTime + dashTime)
+        {
+            if (up == 1 && ScreenPos.y < Screen.height * 2 / 3)
+                transform.position += dashSpeed * Time.deltaTime * new Vector3(0, 0, 1);
+            if (down == 1 && ScreenPos.y > 4.8f)
+                transform.position += dashSpeed * Time.deltaTime * new Vector3(0, 0, -1);
+            if (right == 1 && ScreenPos.x < Screen.width - 40)
+                transform.position += dashSpeed * Time.deltaTime * new Vector3(1, 0, 0);
+            if (left == 1 && ScreenPos.x > 40)
+                transform.position += dashSpeed * Time.deltaTime * new Vector3(-1, 0, 0);
+            yield return null;
+        }
+    }
 }
