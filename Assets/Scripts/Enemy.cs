@@ -4,49 +4,27 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
-    [SerializeField]
-    float speed;
-    [SerializeField]
-    float timeAlive;
-    [SerializeField]
-    float range;
-    [SerializeField]
-    float dureeAttack;
-    Animator anim;
-
-    float timeLastCollision;
-    float sinceBorn;
+    [SerializeField] protected float timeAlive;
+    [SerializeField] protected Animator anim;
+    protected float sinceBorn;
 
     public delegate void OnHitAction();
     public static event OnHitAction OnBulletHit;
 
-    private void Start()
+    protected virtual void Start()
     {
         sinceBorn = Time.time;
         anim = GetComponent<Animator>();
-        timeLastCollision = Time.time - dureeAttack;
         HP = HP_Max;
     }
-    // Update is called once per frame
-    void FixedUpdate()
-    {        
-        if (timeLastCollision + dureeAttack < Time.time) //lorsque le rattata a finit d'attaquer, cours
-            transform.position += new Vector3(0f, 0f, -speed);
-    }
-    private void Update()
+
+    public void BulletHit()
     {
-        if (Time.time > sinceBorn + timeAlive)
-            Destroy(gameObject);
-        //or if hors champ
+        OnBulletHit();
     }
-    private void OnCollisionEnter(Collision collision)
+
+    protected virtual void OnCollisionEnter(Collision collision)
     {
-        if (range <= 1f && collision.transform.tag == "Player")
-        {
-            //Debug.Log("attack");
-            anim.SetBool("attack", true);
-            timeLastCollision = Time.time;
-        }
         if (collision.gameObject.tag == "Bullet")
         {
             HP -= collision.gameObject.GetComponent<Bullet>().Dammage;
