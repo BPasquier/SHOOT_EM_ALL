@@ -69,7 +69,6 @@ public class Player : Entity
 
     void OnCollisionEnter(Collision col)
     {
-        print("coucou");
         if (col.gameObject.tag == "Enemy")
         {
             HP -= 3;

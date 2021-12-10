@@ -49,7 +49,8 @@ public class UserInterface : MonoBehaviour
             GOver.SetActive(true);
             Time.timeScale = 0;
         }
-
+        else if (activated == false)
+            Time.timeScale = 1;
         //menu echap
         if (Input.GetKeyDown(KeyCode.Escape))
             if (activated == false)
