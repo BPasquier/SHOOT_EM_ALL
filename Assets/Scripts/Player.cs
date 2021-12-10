@@ -18,6 +18,7 @@ public class Player : Entity
     [SerializeField] float timeBetweenBullet;
     public int score;
     Stopwatch stopWatch = new Stopwatch();
+    public float timing;
     void PlayerControl()
     {
         ScreenPos = Camera.main.WorldToScreenPoint(transform.position);
@@ -29,8 +30,7 @@ public class Player : Entity
             transform.position += new Vector3(0.15f, 0, 0);
         if (Input.GetKey(KeyCode.LeftArrow) == true && ScreenPos.x > 40)
             transform.position += new Vector3(-0.15f, 0, 0);
-        print(stopWatch.ElapsedMilliseconds);
-        if (Input.GetKey(KeyCode.Keypad0) && stopWatch.ElapsedMilliseconds>Spell1_ReloadTime)
+        if (Input.GetKey(KeyCode.Keypad0) && timing>1)
         {
             stopWatch.Reset();
             stopWatch.Start();
@@ -42,6 +42,7 @@ public class Player : Entity
     void FixedUpdate()
     {
         PlayerControl();
+        timing = (float)stopWatch.ElapsedMilliseconds/Spell1_ReloadTime;
     }
 
     void Start()
@@ -63,6 +64,7 @@ public class Player : Entity
 
     void OnCollisionEnter(Collision col)
     {
+        print("coucou");
         if (col.gameObject.tag == "Enemy")
         {
             HP -= 3;

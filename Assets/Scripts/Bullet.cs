@@ -21,7 +21,7 @@ public class Bullet : Entity
     {
         transform.position += new Vector3(0f, 0f, speed);
         Vector3 posFromScreen = Camera.main.WorldToScreenPoint(transform.position);
-        if (posFromScreen.y > Screen.height * 1)
+        if (posFromScreen.y > Screen.height * 1.5)
             Destroy(gameObject);
 
     }

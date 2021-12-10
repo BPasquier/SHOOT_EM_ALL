@@ -2,26 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_distance : Entity
+public class Enemy_distance : Enemy
 {
-    [SerializeField]
-    float timeAlive;
-    [SerializeField]
-    float dureeAttack;
-    [SerializeField]
-    GameObject bulletPrefab;
-    Animator anim;
+    [SerializeField] protected float dureeAttack;
+    [SerializeField] protected GameObject bulletPrefab; 
+     protected float timeBeginningAttack;
 
-    float sinceBorn;
-    float timeBeginningAttack;
-
-    private void Start()
+    protected override void Start()
     {
         sinceBorn = Time.time;
         anim = GetComponent<Animator>();
+        HP = HP_Max;
     }
     // Update is called once per frame
-    void FixedUpdate()
+    protected void FixedUpdate()
     {
         if (sinceBorn + 2.2 > Time.time) //avance en haut du terrain
         {

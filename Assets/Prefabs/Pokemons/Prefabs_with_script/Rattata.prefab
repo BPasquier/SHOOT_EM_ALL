@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 7058542199854259902}
   - component: {fileID: 9115962793194626436}
   - component: {fileID: -672624409927488391}
-  - component: {fileID: 7915631300911932392}
+  - component: {fileID: 2254608049494999673}
   m_Layer: 0
   m_Name: Rattata
   m_TagString: Enemy
@@ -987,7 +987,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &7915631300911932392
+--- !u!114 &2254608049494999673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -996,13 +996,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8896877989104511456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20d5432222c5edf41b9f69dfe4c2becb, type: 3}
+  m_Script: {fileID: 11500000, guid: 272dfd9a3301cba499cbb70fed4f7f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
   HP_Max: 2
-  speed: 0.1
   timeAlive: 5
+  speed: 0.1
   range: 0.5
   dureeAttack: 0.7
 --- !u!1 &8896877989130800066
