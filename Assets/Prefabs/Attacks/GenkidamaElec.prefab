@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5754357131218933538}
   - component: {fileID: 5754357131218933537}
   - component: {fileID: 5754357131218933536}
-  - component: {fileID: 8630432994519311658}
   - component: {fileID: -7799082654735637588}
   - component: {fileID: -379139105242892902}
+  - component: {fileID: -1882619044775265067}
   m_Layer: 0
   m_Name: GenkidamaElec
   m_TagString: Bullet
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5754357131218933543}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 3.2300007}
+  m_LocalPosition: {x: 0, y: -0, z: 3.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,19 +114,6 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &8630432994519311658
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5754357131218933543}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.34
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &-7799082654735637588
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,6 +144,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 15
   HP_Max: 15
-  speed: 0.03
-  timeAlive: 15
+  speed: 0.046
+  timeAlive: 20
   Dammage: 10
+--- !u!136 &-1882619044775265067
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5754357131218933543}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.2
+  m_Height: 4.6
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}

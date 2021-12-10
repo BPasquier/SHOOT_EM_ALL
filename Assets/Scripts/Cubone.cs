@@ -2,25 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cubone : Entity
+public class Cubone : Enemy
 {
-    [SerializeField]
-    float range;
-    Animator anim;
+    [SerializeField] protected float range;
     bool isAttacking = false;
-    GameObject player;
+    protected GameObject player;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         anim = GetComponent<Animator>();
         player = transform.parent.GetComponent<EnemiesManager>().player;
+        HP = HP_Max;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //destruction en cas de sortie de l'écran Destroy(gameObject);
+        //destruction en cas de sortie de l'ï¿½cran Destroy(gameObject);
     }
 
     private void FixedUpdate()
