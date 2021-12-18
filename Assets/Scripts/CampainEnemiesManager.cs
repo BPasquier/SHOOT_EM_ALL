@@ -94,7 +94,6 @@ public class CampainEnemiesManager : MonoBehaviour
 
                 //on attend que le joueur batte le boss et on desactive le mode boss pour revenir a des vagues d'ennemies normales
                 yield return new WaitUntil(() => bossDeath == true);
-                print("aled");
                 bossPhase = false;
             }
 
