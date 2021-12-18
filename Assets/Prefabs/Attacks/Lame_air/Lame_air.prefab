@@ -102,6 +102,7 @@ MonoBehaviour:
   speed: -0.1
   timeAlive: 3
   Dammage: 1
+  enemy: 0
 --- !u!65 &7494849564950408041
 BoxCollider:
   m_ObjectHideFlags: 0

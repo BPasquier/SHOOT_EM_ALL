@@ -10,6 +10,7 @@ public class Bullet : Entity
     float timeAlive;
     [SerializeField] public float Dammage;
     float sinceBorn;
+    [SerializeField] protected bool rotation;
 
     private void Start()
     {
@@ -19,7 +20,10 @@ public class Bullet : Entity
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position += new Vector3(0f, 0f, speed);
+        if (rotation)
+            transform.position += new Vector3(this.transform.rotation.z, 0f, speed);
+        else
+            transform.position += new Vector3(0, 0f, speed);
         Vector3 posFromScreen = Camera.main.WorldToScreenPoint(transform.position);
         if (posFromScreen.y > Screen.height * 1.5)
             Destroy(gameObject);
