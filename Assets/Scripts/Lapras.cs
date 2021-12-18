@@ -19,34 +19,42 @@ public class Lapras : Boss
     {
         anim = GetComponent<Animator>();
         player = transform.parent.GetComponent<EnemiesManager>().player;
-        /*Transform[] listchildrens = GetComponentsInChildren<Transform>();
+        Transform[] listchildrens = GetComponentsInChildren<Transform>();
         for (int i=0; i<listchildrens.Length;i++)
         {
-            if (listchildrens[i].name.Equals("Neck3"))
+            if (listchildrens[i].name.Equals("Neck2"))
             {
                 neck = listchildrens[i];
                 break;
             }      
-        }*/
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        anim.SetBool("IceBeam", iceBeam);
-        /*if (iceBeam)
+        Vector3 direction = neck.InverseTransformPoint(player.transform.position);
+        //Debug.Log(direction);
+        if (iceBeam)
         {
-            Vector3 direction = transform.InverseTransformPoint(player.transform.position);
-            if (direction.x < -1)
-                neck.Rotate(new Vector3(-1f, 0f, 0f));
-            else if (direction.x > 1)
-                neck.Rotate(new Vector3(1f, 0f, 0f));
-
+            direction = neck.InverseTransformPoint(player.transform.position);
+            Debug.Log(direction);
+            if (direction.z < -1)
+                neck.Rotate(new Vector3(0f, -.05f, 0f));
+            else if (direction.z > 1)
+                neck.Rotate(new Vector3(0f, .05f, 0f));
+            anim.SetBool("IceBeam", iceBeam);
         }
         else
         {
-            neck.rotation = Quaternion.Euler(new Vector3 (neck.rotation.x, neck.rotation.y, neck.rotation.z));
-        }*/
+            Vector3 rotationNeck = (neck.localRotation).eulerAngles;
+            if (rotationNeck.y < -1)
+                neck.Rotate(new Vector3(0f, .05f, 0f));
+            else if (rotationNeck.y > 1)
+                neck.Rotate(new Vector3(0f, -.05f, 0f));
+            else
+                anim.SetBool("IceBeam", iceBeam);
+        }
         if (iceSpikes && !iceSpikessaved) //regarde si il vient d'etre true
         {
             iceSpikessaved = true;
