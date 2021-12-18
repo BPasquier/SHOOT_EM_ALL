@@ -1272,7 +1272,7 @@ GameObject:
   - component: {fileID: 2592265747434693974}
   m_Layer: 0
   m_Name: EndFeelerA
-  m_TagString: Enemy
+  m_TagString: Cubone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1839,7 +1839,6 @@ MonoBehaviour:
   HP: 0
   HP_Max: 3
   timeAlive: 10
-  anim: {fileID: 9177476827093542767}
   DropTab:
   - {fileID: 6164621857846575775, guid: 81965806d3adfda44860aa395d6bd247, type: 3}
   - {fileID: 4965917174216285430, guid: c89f0992bb00d784c87b1c20117f4887, type: 3}

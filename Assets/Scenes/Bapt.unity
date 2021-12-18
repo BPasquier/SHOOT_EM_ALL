@@ -6321,7 +6321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  HP_Max: 20
+  HP_Max: 10
   m_MainCamera: {fileID: 984353090}
   ScreenPos: {x: 0, y: 0, z: 0}
   bullet: {fileID: 4666245217911035029, guid: 0bfd646fb0ca9ac41b81ede93e3bee21, type: 3}

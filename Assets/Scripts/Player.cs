@@ -71,7 +71,6 @@ public class Player : Entity
     {
         if (col.gameObject.tag == "Enemy")
         {
-            print("ah !");
             HP -= col.gameObject.GetComponent<Enemy>().Dammage;
             if (HP<=0)
             {
