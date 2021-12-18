@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : Entity
 {
     [SerializeField] protected float timeAlive;
-    [SerializeField] protected Animator anim;
+    protected Animator anim;
     protected float sinceBorn;
 
     public delegate void OnHitAction();
