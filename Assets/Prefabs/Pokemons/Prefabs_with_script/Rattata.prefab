@@ -1002,6 +1002,13 @@ MonoBehaviour:
   HP: 0
   HP_Max: 2
   timeAlive: 5
+  anim: {fileID: 7058542199854259902}
+  DropTab:
+  - {fileID: 6164621857846575775, guid: 81965806d3adfda44860aa395d6bd247, type: 3}
+  - {fileID: 4965917174216285430, guid: c89f0992bb00d784c87b1c20117f4887, type: 3}
+  DropsPercentages: 3200000032000000
+  DropRate: 100
+  Dammage: 1
   speed: 0.1
   range: 0.5
   dureeAttack: 0.7

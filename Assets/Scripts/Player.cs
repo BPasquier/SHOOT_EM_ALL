@@ -71,7 +71,43 @@ public class Player : Entity
     {
         if (col.gameObject.tag == "Enemy")
         {
-            HP -= 3;
+            print("ah !");
+            HP -= col.gameObject.GetComponent<Enemy>().Dammage;
+            if (HP<=0)
+            {
+                HP = 0;
+                Destroy(gameObject);
+            }
+        }
+        if (col.gameObject.tag == "HP")
+        {
+            HP += col.gameObject.GetComponent<Bullet>().Dammage;
+            col.gameObject.GetComponent<Bullet>().HP -=1;
+            if (col.gameObject.GetComponent<Bullet>().HP <= 0)
+                Destroy(col.gameObject);
+        }
+        if (col.gameObject.tag == "FR")
+        {
+            timeBetweenBullet = timeBetweenBullet/2;
+            col.gameObject.GetComponent<Bullet>().HP -=1;
+            if (col.gameObject.GetComponent<Bullet>().HP <= 0)
+                Destroy(col.gameObject);
+        }
+        if (col.gameObject.tag == "Enemy_Bullet")
+        {
+            HP -= col.gameObject.GetComponent<Bullet>().Dammage;
+            col.gameObject.GetComponent<Bullet>().HP -=1;
+            if (col.gameObject.GetComponent<Bullet>().HP <= 0)
+                Destroy(col.gameObject);
+            if (HP<=0)
+            {
+                HP = 0;
+                Destroy(gameObject);
+            }
+        }
+        if (col.gameObject.tag == "Cubone")
+        {
+            HP -= 1;
             if (HP<=0)
             {
                 HP = 0;
