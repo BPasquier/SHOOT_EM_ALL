@@ -11,6 +11,7 @@ TagManager:
   - HP
   - Undefined
   - FR
+  - NbBullet
   layers:
   - Default
   - TransparentFX

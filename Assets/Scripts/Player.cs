@@ -138,6 +138,13 @@ public class Player : Entity
         {
             HP -= 1;
         }
+        if (col.gameObject.tag == "NbBullet")
+        {
+            nbBullet += 1;
+            col.gameObject.GetComponent<Bullet>().HP -=1;
+            if (col.gameObject.GetComponent<Bullet>().HP <= 0)
+                Destroy(col.gameObject);
+        }
     }
 
     void Score()
