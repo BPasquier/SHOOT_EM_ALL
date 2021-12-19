@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Enemy
   - Bullet
+  - Enemy_Bullet
+  - Cubone
+  - HP
+  - Undefined
+  - FR
+  - NbBullet
   layers:
   - Default
   - TransparentFX

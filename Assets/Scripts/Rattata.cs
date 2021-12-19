@@ -42,6 +42,7 @@ public class Rattata : Enemy
             HP -= collision.gameObject.GetComponent<Bullet>().Dammage;
             if (HP<=0)
             {
+                Drop(DropRate);
                 Destroy(gameObject);
                 BulletHit();
             }

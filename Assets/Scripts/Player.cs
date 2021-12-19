@@ -19,6 +19,7 @@ public class Player : Entity
     public int score;
     Stopwatch stopWatch = new Stopwatch();
     public float timing;
+    public int nbBullet;
     void PlayerControl()
     {
         ScreenPos = Camera.main.WorldToScreenPoint(transform.position);
@@ -53,6 +54,7 @@ public class Player : Entity
     void Start()
     {
         HP = HP_Max;
+        nbBullet=1;
         Enemy.OnBulletHit += Score;
         StartCoroutine(SpawnBullet());
         stopWatch.Start();
@@ -62,21 +64,86 @@ public class Player : Entity
     {
         while (Application.isPlaying)
         {
-            GameObject obj = Instantiate(bullet, transform.position + new Vector3(0f, 0f, 1f), Quaternion.Euler(0f,0f,0f));
+            if (nbBullet%2 == 0)
+            {
+                float pos = 0;
+                List<GameObject> obj = new List<GameObject> ();
+                for (int i=0; i<nbBullet; i++)
+                {
+                    obj.Add(Instantiate(bullet, transform.position + new Vector3(pos-(1f/(float)nbBullet) - (float)(nbBullet-2)/(float)nbBullet, 0f, 0f), Quaternion.Euler(0f,0f,0f)));
+                    pos += 2f/(float)nbBullet;
+                }
+            }
+            else
+            {
+                float pos = 0;
+                List<GameObject> obj = new List<GameObject> ();
+                for (int i=0; i<nbBullet; i++)
+                {
+                    pos += 20f/(float)nbBullet;
+                    obj.Add(Instantiate(bullet, transform.position + new Vector3(0f, 0f, 0f), Quaternion.Euler(0f,0f,pos-20f/(float)nbBullet-(10*nbBullet -10 )/(float)nbBullet)));
+                }
+            }
+            /*float angle = 0f;
+            for (int i=1; i<nbBullet; i++)
+            {
+                angle = 
+                GameObject obj = Instantiate(bullet, transform.position + new Vector3(0f, 0f, 1f), Quaternion.Euler(0f,0f,0f));
+            }*/
             yield return new WaitForSeconds(timeBetweenBullet);
         }
+    }
+
+    int sqrt2 (int nb)
+    {
+        int tmp = nb;
+        int count = 0;
+        while (tmp > 1)
+        {
+            tmp = tmp/2;
+            count++;
+        }
+        print(count);
+        return count;
     }
 
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Enemy")
         {
-            HP -= 3;
-            if (HP<=0)
-            {
-                HP = 0;
-                Destroy(gameObject);
-            }
+            HP -= col.gameObject.GetComponent<Enemy>().Dammage;
+        }
+        if (col.gameObject.tag == "HP")
+        {
+            HP += col.gameObject.GetComponent<Bullet>().Dammage;
+            col.gameObject.GetComponent<Bullet>().HP -=1;
+            if (col.gameObject.GetComponent<Bullet>().HP <= 0)
+                Destroy(col.gameObject);
+        }
+        if (col.gameObject.tag == "FR")
+        {
+            timeBetweenBullet = timeBetweenBullet/1.5f;
+            col.gameObject.GetComponent<Bullet>().HP -=1;
+            if (col.gameObject.GetComponent<Bullet>().HP <= 0)
+                Destroy(col.gameObject);
+        }
+        if (col.gameObject.tag == "Enemy_Bullet")
+        {
+            HP -= col.gameObject.GetComponent<Bullet>().Dammage;
+            col.gameObject.GetComponent<Bullet>().HP -=1;
+            if (col.gameObject.GetComponent<Bullet>().HP <= 0)
+                Destroy(col.gameObject);
+        }
+        if (col.gameObject.tag == "Cubone")
+        {
+            HP -= 1;
+        }
+        if (col.gameObject.tag == "NbBullet")
+        {
+            nbBullet += 1;
+            col.gameObject.GetComponent<Bullet>().HP -=1;
+            if (col.gameObject.GetComponent<Bullet>().HP <= 0)
+                Destroy(col.gameObject);
         }
     }
 

@@ -6,7 +6,7 @@ public class Enemy_distance : Enemy
 {
     [SerializeField] protected float dureeAttack;
     [SerializeField] protected GameObject bulletPrefab; 
-     protected float timeBeginningAttack;
+    protected float timeBeginningAttack;
 
     protected override void Start()
     {

@@ -131,6 +131,7 @@ MonoBehaviour:
   speed: 0.15
   timeAlive: 5
   Dammage: 1
+  rotation: 1
 --- !u!54 &7187224103757575115
 Rigidbody:
   m_ObjectHideFlags: 0
