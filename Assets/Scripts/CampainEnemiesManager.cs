@@ -7,6 +7,9 @@ public class CampainEnemiesManager : MonoBehaviour
 {
     [SerializeField] GameObject[] enemyTab;
     [SerializeField] GameObject[] bossTab;
+
+    lapras.getComponent<Lapras>.HP;
+
     int[] enemyPercentages = new int[3];
     [SerializeField] float timeBetweenEnemies;
     public GameObject player;
@@ -17,8 +20,7 @@ public class CampainEnemiesManager : MonoBehaviour
     bool enemiesPhase;
     bool bossPhase;
     int idBoss = 0;
-    bool bossDeath = false;
-
+    
     private void Start()
     {
         StartCoroutine(SpawnEnemy());
@@ -61,7 +63,7 @@ public class CampainEnemiesManager : MonoBehaviour
                 bossPhase = true;
             }
 
-            if (time >=120 && enemiesPhase == false && bossPhase == false)
+            if (time >=120 && enemiesPhase == false && bossPhase == false) //mob phase 4
             {
                 enemiesPhase = true;
                 enemyPercentages[0] = 15;
@@ -93,7 +95,7 @@ public class CampainEnemiesManager : MonoBehaviour
                 obj.transform.parent = transform;
 
                 //on attend que le joueur batte le boss et on desactive le mode boss pour revenir a des vagues d'ennemies normales
-                yield return new WaitUntil(() => bossDeath == true);
+                yield return new WaitUntil(() => bossTab[idBoss].HP >= 0);
                 bossPhase = false;
             }
 

@@ -1440,8 +1440,8 @@ MonoBehaviour:
   m_text: "Jeu R\xE9alis\xE9 par :\n-Luis LEBOULLENGER\n-Baptiste PASQUIER\n-Adrien
     POIGNET\n\nMerci \xE0 GameFreak pour les models 3D !"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 7d7f1cf589e0e624ab2d0ace9b6a3051, type: 2}
+  m_sharedMaterial: {fileID: 8088288899884090813, guid: 7d7f1cf589e0e624ab2d0ace9b6a3051, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -350,6 +350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2939169426092170821}
+  - component: {fileID: -4187342066691124809}
   m_Layer: 0
   m_Name: Lapras
   m_TagString: Untagged
@@ -383,6 +384,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4187342066691124809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2558563187701695743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261463150882d544b9c3b5d47500ceaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0
+  HP_Max: 100
+  timeAlive: 180
+  iceBeam: 0
+  iceSpikes: 0
+  iceShards: 0
+  iceSpikeObj: {fileID: 5448103171891391366, guid: d041fd1c6a357444db5dfaece2d6546a, type: 3}
+  iceShardObj: {fileID: 2141546487183262205, guid: 79736c00ade2df347b9b02889bcd7649, type: 3}
 --- !u!1 &2585924615850292997
 GameObject:
   m_ObjectHideFlags: 0
