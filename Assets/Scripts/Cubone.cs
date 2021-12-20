@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Cubone : Enemy
 {
@@ -12,14 +13,11 @@ public class Cubone : Enemy
     protected override void Start()
     {
         anim = GetComponent<Animator>();
-        player = transform.parent.GetComponent<EnemiesManager>().player;
+        if (SceneManager.GetActiveScene().name.Equals("Campain"))
+            player = transform.parent.GetComponent<CampainEnemiesManager>().player;
+        else if (SceneManager.GetActiveScene().name.Equals("Survival"))
+            player = transform.parent.GetComponent<EnemiesManager>().player;
         HP = HP_Max;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //destruction en cas de sortie de l'�cran Destroy(gameObject);
     }
 
     private void FixedUpdate()
