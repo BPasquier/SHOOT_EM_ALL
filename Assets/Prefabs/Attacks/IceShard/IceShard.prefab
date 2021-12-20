@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4094694718397868693}
   m_Layer: 0
   m_Name: IceShard
-  m_TagString: Enemy
+  m_TagString: Enemy_Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,10 +97,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  HP_Max: 0
+  HP_Max: 1
   speed: 0
   timeAlive: 5
   Dammage: 3
+  rotation: 0
   direction: {x: 0, y: 0, z: 0}
 --- !u!54 &5682588225766212358
 Rigidbody:
