@@ -122,7 +122,7 @@ public class Player : Entity
         }
         if (col.gameObject.tag == "FR")
         {
-            timeBetweenBullet = timeBetweenBullet/1.5f;
+            timeBetweenBullet = timeBetweenBullet/1.3f;
             col.gameObject.GetComponent<Bullet>().HP -=1;
             if (col.gameObject.GetComponent<Bullet>().HP <= 0)
                 Destroy(col.gameObject);
