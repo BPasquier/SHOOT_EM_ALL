@@ -552,7 +552,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3902411750886439685}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: 62f2029d9b7111f47a57a89897fe9bbe, type: 3}
+  m_Asset: {fileID: 0}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
@@ -651,6 +651,7 @@ MonoBehaviour:
   speed: 0
   timeAlive: 0
   Dammage: 0
+  rotation: 0
 --- !u!54 &3902411750886439681
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1545,8 +1546,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  HP_Max: 0
-  timeAlive: 0
+  HP_Max: 50
+  timeAlive: 1000
+  DropTab: []
+  DropsPercentages: 
+  DropRate: 0
+  Dammage: 10
 --- !u!54 &8542887610916057620
 Rigidbody:
   m_ObjectHideFlags: 0
