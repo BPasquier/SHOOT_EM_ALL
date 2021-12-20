@@ -18,6 +18,7 @@ public class Lapras : Boss
     Transform neck;
     private void Start()
     {
+        HP = HP_Max;
         anim = GetComponent<Animator>();
         if (SceneManager.GetActiveScene().name.Equals("Campain"))
             player = transform.parent.GetComponent<CampainEnemiesManager>().player;
