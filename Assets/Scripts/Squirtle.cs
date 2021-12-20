@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Squirtle : Boss
@@ -10,10 +11,25 @@ public class Squirtle : Boss
     private void Start()
     {
         anim = GetComponent<Animator>();
-        player = transform.parent.GetComponent<EnemiesManager>().player;
+        if (SceneManager.GetActiveScene().name.Equals("Campain"))
+            player = transform.parent.GetComponent<CampainEnemiesManager>().player;
+        else if (SceneManager.GetActiveScene().name.Equals("Survival"))
+            player = transform.parent.GetComponent<EnemiesManager>().player;
+        transform.position = new Vector3(0,0,9f);
+        StartCoroutine(InstantiateSquirtle());
+    }
+    private IEnumerator InstantiateSquirtle()
+    {
+        anim.SetBool("moving", true);
+        while (transform.position.z > 3)
+        {
+            transform.position += new Vector3(0,0,-.1f);
+            yield return new WaitForSeconds(0.01f);
+        }
+        anim.SetBool("moving", false);
+        yield return new WaitForSeconds(1);
         StartCoroutine(UpdateSquirtle());
     }
-
     private IEnumerator UpdateSquirtle()
     {
         while (true)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Lapras : Boss
 {
@@ -18,7 +19,10 @@ public class Lapras : Boss
     private void Start()
     {
         anim = GetComponent<Animator>();
-        player = transform.parent.GetComponent<EnemiesManager>().player;
+        if (SceneManager.GetActiveScene().name.Equals("Campain"))
+            player = transform.parent.GetComponent<CampainEnemiesManager>().player;
+        else if (SceneManager.GetActiveScene().name.Equals("Survival"))
+            player = transform.parent.GetComponent<EnemiesManager>().player;
         Transform[] listchildrens = GetComponentsInChildren<Transform>();
         for (int i=0; i<listchildrens.Length;i++)
         {
