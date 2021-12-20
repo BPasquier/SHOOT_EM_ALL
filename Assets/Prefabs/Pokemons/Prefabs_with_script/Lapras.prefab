@@ -1449,7 +1449,7 @@ GameObject:
   - component: {fileID: 3137781904261035922}
   m_Layer: 0
   m_Name: IceBeam
-  m_TagString: Enemy
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
