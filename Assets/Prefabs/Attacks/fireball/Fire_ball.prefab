@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 8417748980607237844}
   - component: {fileID: 8417748980607237847}
   - component: {fileID: -8286010363448501580}
+  - component: {fileID: 1161420115613252573}
+  - component: {fileID: -1815998725955315157}
   m_Layer: 0
   m_Name: Fire_ball
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4818,10 +4820,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  HP_Max: 0
+  HP_Max: 1
   speed: 0.1
   timeAlive: 10
-  Dammage: 5
+  Dammage: 1
   rotation: 1
 --- !u!54 &1161420115613252573
 Rigidbody:
