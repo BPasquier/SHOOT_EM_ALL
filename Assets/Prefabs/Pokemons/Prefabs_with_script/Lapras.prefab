@@ -1270,8 +1270,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  HP_Max: 50
+  HP_Max: 300
   timeAlive: 500
+  DropTab: []
+  DropsPercentages: 
+  DropRate: 0
+  Dammage: 0
   iceBeam: 0
   iceSpikes: 0
   iceShards: 0
@@ -1410,6 +1414,8 @@ GameObject:
   - component: {fileID: 8971529653524970836}
   - component: {fileID: 8971529653524970835}
   - component: {fileID: 8971529653524970839}
+  - component: {fileID: 4981433084667250282}
+  - component: {fileID: 3137781904261035922}
   m_Layer: 0
   m_Name: IceBeam
   m_TagString: Untagged
@@ -1552,3 +1558,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8160683, y: 0.9791473, z: 20.366673}
   m_Center: {x: -0.072303034, y: -0.010357893, z: 10.3362055}
+--- !u!54 &4981433084667250282
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971529653524970834}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &3137781904261035922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971529653524970834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d5432222c5edf41b9f69dfe4c2becb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0
+  HP_Max: 100
+  timeAlive: 1000
+  DropTab: []
+  DropsPercentages: 
+  DropRate: 0
+  Dammage: 3

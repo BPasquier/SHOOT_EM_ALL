@@ -18,6 +18,7 @@ public class Lapras : Boss
     Transform neck;
     private void Start()
     {
+        HP = HP_Max;
         anim = GetComponent<Animator>();
         if (SceneManager.GetActiveScene().name.Equals("Campain"))
             player = transform.parent.GetComponent<CampainEnemiesManager>().player;
@@ -32,48 +33,69 @@ public class Lapras : Boss
                 break;
             }      
         }
+        StartCoroutine(InstantiateLapras());
+        transform.Rotate(0, 180f, 0);
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private IEnumerator InstantiateLapras()
     {
-        Vector3 direction = neck.InverseTransformPoint(player.transform.position);
-        //Debug.Log(direction);
-        if (iceBeam)
+        while (transform.position.z > 5f)
         {
-            direction = neck.InverseTransformPoint(player.transform.position);
-            Debug.Log(direction);
-            if (direction.z < -1)
-                neck.Rotate(new Vector3(0f, -.05f, 0f));
-            else if (direction.z > 1)
-                neck.Rotate(new Vector3(0f, .05f, 0f));
-            anim.SetBool("IceBeam", iceBeam);
+            transform.position += new Vector3(0, 0, -.05f);
+            yield return new WaitForSeconds(0.01f);
         }
-        else
+        anim.SetBool("moving", false);
+        yield return new WaitForSeconds(1);
+        StartCoroutine(UpdateLapras());
+    }
+    private IEnumerator UpdateLapras()
+    {
+        while (true)
         {
-            Vector3 rotationNeck = (neck.localRotation).eulerAngles;
-            if (rotationNeck.y < -1)
-                neck.Rotate(new Vector3(0f, .05f, 0f));
-            else if (rotationNeck.y > 1)
-                neck.Rotate(new Vector3(0f, -.05f, 0f));
-            else
-                anim.SetBool("IceBeam", iceBeam);
-        }
-        if (iceSpikes && !iceSpikessaved) //regarde si il vient d'etre true
-        {
-            iceSpikessaved = true;
-            StartCoroutine(spawnIceSpikes(5));
-        }
-        if (!iceSpikes)
-            iceSpikessaved = false;
-        if (iceShards && !iceShardssaved) //regarde si il vient d'etre true
-        {
-            iceShardssaved = true;
-            StartCoroutine(spawnIceShards());
-        }
-        if (!iceShards)
-            iceShardssaved = false;
+            int rand = Random.Range(0, 3);
+            
+            if (rand==0)
+            {
+                anim.SetBool("IceBeam", true);
+                float timedebut = Time.time;
 
+                while (Time.time< timedebut+10)
+                {
+                    Vector3 direction = neck.InverseTransformPoint(player.transform.position);
+                    direction = neck.InverseTransformPoint(player.transform.position);
+                    Debug.Log(direction);
+                    if (direction.z < -1)
+                        neck.Rotate(new Vector3(0f, -.1f, 0f));
+                    else if (direction.z > 1)
+                        neck.Rotate(new Vector3(0f, .1f, 0f));
+                    yield return new WaitForSeconds(.01f);
+                }
+
+                Vector3 rotationNeck = (neck.localRotation).eulerAngles;
+                while (rotationNeck.y < -1 || rotationNeck.y > 1)
+                {
+                    if (rotationNeck.y < -1)
+                        neck.Rotate(new Vector3(0f, .1f, 0f));
+                    else if (rotationNeck.y > 1)
+                        neck.Rotate(new Vector3(0f, -.1f, 0f));
+                    rotationNeck = (neck.localRotation).eulerAngles;
+                    yield return new WaitForSeconds(.01f);
+                }
+                anim.SetBool("IceBeam", false);
+            }
+
+            else if (rand == 1)
+            {
+                StartCoroutine(spawnIceSpikes(10));
+                yield return new WaitForSeconds(2f);
+            }
+            else if (rand == 2)
+            {
+                StartCoroutine(spawnIceShards());
+                yield return new WaitForSeconds(2f);
+            }
+            yield return new WaitForSeconds(1f);
+        }
     }
     IEnumerator spawnIceSpikes(int nbSpikes)
     {
@@ -94,19 +116,19 @@ public class Lapras : Boss
         Quaternion rotationIceShard = Random.rotation;
         GameObject shard0 = Instantiate(iceShardObj, posIceShard, rotationIceShard);
         shard0.GetComponent<AutoGuidedBullet>().direction = (player.transform.position - transform.position).normalized;
-        new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.5f);
 
         posIceShard = transform.TransformPoint(-41f, 35f, 48f);
         rotationIceShard = Random.rotation;
         GameObject shard1 = Instantiate(iceShardObj, posIceShard, rotationIceShard);
         shard1.GetComponent<AutoGuidedBullet>().direction = (player.transform.position - transform.position).normalized;
-        new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.5f);
 
         posIceShard = transform.TransformPoint(30f, 51f, 22f);
         rotationIceShard = Random.rotation;
         GameObject shard2 = Instantiate(iceShardObj, posIceShard, rotationIceShard);
         shard2.GetComponent<AutoGuidedBullet>().direction = (player.transform.position - transform.position).normalized;
-        new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.5f);
 
         posIceShard = transform.TransformPoint(-30f, 51f, 22f);
         rotationIceShard = Random.rotation;

@@ -10,6 +10,7 @@ public class Squirtle : Boss
     // Start is called before the first frame update
     private void Start()
     {
+        HP = HP_Max;
         anim = GetComponent<Animator>();
         if (SceneManager.GetActiveScene().name.Equals("Campain"))
             player = transform.parent.GetComponent<CampainEnemiesManager>().player;
@@ -47,12 +48,12 @@ public class Squirtle : Boss
                 {
                     if (direction.x < -1)
                     {
-                        transform.position += new Vector3(-.1f, 0f, 0f);
+                        transform.position += new Vector3(.1f, 0f, 0f);
                         Debug.Log("-");
                     }
                     else if (direction.x > 1)
                     {
-                        transform.position += new Vector3(.1f, 0f, 0f);
+                        transform.position += new Vector3(-.1f, 0f, 0f);
                         Debug.Log("+");
                     }
                     direction = transform.InverseTransformPoint(player.transform.position);
@@ -80,12 +81,19 @@ public class Squirtle : Boss
             }
             else if (rand == 1) //charge
             {
-                Vector3 direction = transform.InverseTransformPoint(player.transform.position);
-                Debug.Log(direction);
+                Vector3 playerposition = player.transform.position;
+                Vector3 direction = transform.InverseTransformPoint(playerposition);
+                //Debug.Log(direction);
                 anim.SetBool("moving", true);
                 yield return new WaitForSeconds(.5f);
                 int advancecount = 0;
-                while (Vector3.Distance(player.transform.position, transform.position) > 1f)
+                while (Vector3.Distance(playerposition, transform.position) > 1f)
+                {
+                    transform.position -= direction.normalized * .1f;
+                    yield return new WaitForSeconds(0.01f);
+                    advancecount += 1;
+                }
+                while (Vector3.Distance(playerposition, transform.position) < 1f)
                 {
                     transform.position -= direction.normalized * .1f;
                     yield return new WaitForSeconds(0.01f);
