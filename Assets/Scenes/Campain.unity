@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4ef7bb19543b9499c4449d1149c3ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 871909871}
+  player: {fileID: 1832936782}
   Menu: {fileID: 1454874967}
   GOver: {fileID: 826506108}
   Scene:
@@ -3017,95 +3017,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710551274}
   m_CullTransparentMesh: 1
---- !u!1001 &742397621
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -679494760308701443, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: HP_Max
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: -679494760308701443, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: Spell1
-      value: 
-      objectReference: {fileID: 5754357131218933543, guid: 7b6bd78578b7ed04380bb52faa8b156b, type: 3}
-    - target: {fileID: -679494760308701443, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 8417748980607237849, guid: 84d1c6c20857f9848ab47fde300fcdfa, type: 3}
-    - target: {fileID: -679494760308701443, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: nbBullet
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -679494760308701443, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: Score_Text
-      value: 
-      objectReference: {fileID: 640129755}
-    - target: {fileID: -679494760308701443, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: m_MainCamera
-      value: 
-      objectReference: {fileID: 1645685998}
-    - target: {fileID: -679494760308701443, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: Spell1_ReloadTime
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: -679494760308701443, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: timeBetweenBullet
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 5023766112339851091, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: m_Name
-      value: Charmander
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689119474630340073, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689119474630340073, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689119474630340073, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689119474630340073, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689119474630340073, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689119474630340073, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689119474630340073, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689119474630340073, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689119474630340073, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689119474630340073, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689119474630340073, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
 --- !u!1 &746097496
 GameObject:
   m_ObjectHideFlags: 0
@@ -3503,22 +3414,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828437678}
   m_CullTransparentMesh: 1
---- !u!1 &871909870 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5023766112339851091, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-  m_PrefabInstance: {fileID: 742397621}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &871909871 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -679494760308701443, guid: ddaab9cb6beb3d74eb231d4a234e33da, type: 3}
-  m_PrefabInstance: {fileID: 742397621}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871909870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ffe31c6095ec814db3483e50990f62b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &874749367
 GameObject:
   m_ObjectHideFlags: 0
@@ -4640,7 +4535,7 @@ MonoBehaviour:
   - {fileID: 8542887610916057608, guid: 1898233e5b973f5438d6d2cbf70138b9, type: 3}
   - {fileID: 8088517149201067421, guid: bde013347d0dc1c4a88c5380bf42ea8a, type: 3}
   timeBetweenEnemies: 2
-  player: {fileID: 871909870}
+  player: {fileID: 1832936781}
 --- !u!4 &1118278728
 Transform:
   m_ObjectHideFlags: 0
@@ -6418,7 +6313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animateImageObj: {fileID: 1686213959}
-  Joueur: {fileID: 871909871}
+  Joueur: {fileID: 1832936782}
 --- !u!114 &1686213958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6949,7 +6844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1832936782
 MonoBehaviour:
   m_ObjectHideFlags: 0

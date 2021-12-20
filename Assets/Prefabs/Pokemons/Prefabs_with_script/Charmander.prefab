@@ -1295,15 +1295,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5023766112339851091}
-  m_LocalRotation: {x: 0.6256413, y: -0, z: -0, w: 0.7801109}
-  m_LocalPosition: {x: -0, y: 0.3, z: -4}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.9929996, y: 0.011, z: -5.052492}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3232939925878850181}
   - {fileID: 1008976306853956619}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 77.459, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5023766112339851116
 Animator:
   serializedVersion: 3
@@ -1336,19 +1336,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  HP_Max: 20
+  HP_Max: 0
   m_MainCamera: {fileID: 0}
   ScreenPos: {x: 0, y: 0, z: 0}
-  bullet: {fileID: 4666245217911035029, guid: 0bfd646fb0ca9ac41b81ede93e3bee21, type: 3}
-  Spell1: {fileID: 5754357131218933543, guid: 7b6bd78578b7ed04380bb52faa8b156b, type: 3}
-  Spell1_ReloadTime: 10000
+  bullet: {fileID: 0}
+  Spell1: {fileID: 0}
+  Spell1_ReloadTime: 0
   Score_Text: {fileID: 0}
   m_VerticalSpeed: 0
   m_HorizontalSpeed: 0
-  timeBetweenBullet: 0.45
+  timeBetweenBullet: 0
   score: 0
   timing: 0
-  nbBullet: 0
 --- !u!1 &5026507101450553608
 GameObject:
   m_ObjectHideFlags: 0
