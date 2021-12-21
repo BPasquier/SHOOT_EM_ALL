@@ -1242,7 +1242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -751, y: -430}
+  m_AnchoredPosition: {x: -1007, y: -567}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1013813061
@@ -1438,9 +1438,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Jeu R\xE9alis\xE9 par :\n-Luis LEBOULLENGER\n-Baptiste PASQUIER\n-Adrien
-    POIGNET\n\nMerci \xE0 Adam Dernis\r pour les models 3D partag\xE9s sur le github
-    PoGo-Devs.\nMerci \xE0 la chaine youtube Gabriel Aguiar Prod. pour ses tutoriels
-    sur les shaders graphs."
+    POIGNET\n\nMerci \xE0 Adam Dernis\r                                  pour les
+    models 3D partag\xE9s sur le github PoGo-Devs.\n\nMerci \xE0 la chaine youtube
+    Gabriel Aguiar Prod. pour ses tutoriels sur les shaders graphs."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 0}
@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
