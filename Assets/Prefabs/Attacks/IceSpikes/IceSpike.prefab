@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 5448103171891391417}
   - component: {fileID: 5448103171891391416}
   - component: {fileID: 5448103171891391367}
+  - component: {fileID: 5034211867168624047}
+  - component: {fileID: 4556658536591915970}
   m_Layer: 0
   m_Name: IceSpike
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,6 +68,41 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6914062, y: 5.43062, z: 2.5392733}
   m_Center: {x: 58.87092, y: 32.70812, z: 5.910252}
+--- !u!54 &5034211867168624047
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5448103171891391366}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &4556658536591915970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5448103171891391366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d5432222c5edf41b9f69dfe4c2becb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0
+  HP_Max: 100
+  timeAlive: 100
+  DropTab: []
+  DropsPercentages: 
+  DropRate: 0
+  Dammage: 5
 --- !u!1001 &5448103171123213811
 PrefabInstance:
   m_ObjectHideFlags: 0

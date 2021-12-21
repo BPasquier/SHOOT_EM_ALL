@@ -14,6 +14,10 @@ public class CampainEnemiesManager : MonoBehaviour
     [SerializeField] float timeBetweenEnemies;
     public GameObject player;
     int i;
+    [SerializeField] AudioSource musicManager;
+    [SerializeField] AudioClip musicRoute;
+    [SerializeField] AudioClip musicBoss1;
+    [SerializeField] AudioClip musicBoss2;
 
     //gestion du temps
     float time;
@@ -56,8 +60,9 @@ public class CampainEnemiesManager : MonoBehaviour
                 enemiesPhase = true;
             }
             
-            if (time >= 120) //bose phase 1
+            if (time >= 120) //boss phase 1
             {
+                musicManager.clip = musicBoss1;
                 enemiesPhase = false;
                 //idBoss = 1;
                 bossPhase = true;
@@ -65,6 +70,7 @@ public class CampainEnemiesManager : MonoBehaviour
 
             if (time >=120 && enemiesPhase == false && bossPhase == false) //mob phase 4
             {
+                musicManager.clip = musicRoute;
                 enemiesPhase = true;
                 enemyPercentages[0] = 15;
                 enemyPercentages[1] = 35;
@@ -91,7 +97,7 @@ public class CampainEnemiesManager : MonoBehaviour
             if (bossPhase == true)
             {
                 //Crée un gameObject boss
-                GameObject obj = Instantiate(bossTab[idBoss], Camera.main.ScreenToWorldPoint(new Vector3(0f, 0f, 0f)) + new Vector3(Random.Range(-9f, 9f), -Camera.main.transform.position.y, 10f), Quaternion.Euler(0f, 180f, 0f));
+                GameObject obj = Instantiate(bossTab[idBoss], Camera.main.ScreenToWorldPoint(new Vector3(0f, 0f, 0f)) + new Vector3(Random.Range(-9f, 9f), -Camera.main.transform.position.y, 10f), Quaternion.Euler(0f, 0f, 0f));
                 obj.transform.parent = transform;
 
                 //on attend que le joueur batte le boss et on desactive le mode boss pour revenir a des vagues d'ennemies normales

@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Enemy
   - Bullet
+  - Enemy_Bullet
+  - Cubone
+  - HP
+  - Undefined
+  - FR
+  - NbBullet
+  - Attack
   layers:
   - Default
   - TransparentFX
