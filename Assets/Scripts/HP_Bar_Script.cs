@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HP_Bar_Script : MonoBehaviour
 {
-    [SerializeField] private Player joueur;
+    [SerializeField] public Entity joueur;
     [SerializeField] private Slider slider;
 
     // Start is called before the first frame update
