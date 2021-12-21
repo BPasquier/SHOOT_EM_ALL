@@ -3071,7 +3071,7 @@ MonoBehaviour:
   - {fileID: 4316121768385798227, guid: 249ea732bf1a67b45b6dfe3a00a2f9cb, type: 3}
   - {fileID: 9177476827093542764, guid: e662d71851b131f44a656adbc33713bf, type: 3}
   bossTab:
-  - {fileID: 8088517149201067421, guid: bde013347d0dc1c4a88c5380bf42ea8a, type: 3}
+  - {fileID: 8542887610916057608, guid: 1898233e5b973f5438d6d2cbf70138b9, type: 3}
   - {fileID: 8088517149201067421, guid: bde013347d0dc1c4a88c5380bf42ea8a, type: 3}
   timeBetweenEnemies: 2
   player: {fileID: 73351284}

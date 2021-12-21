@@ -153,6 +153,11 @@ public class Player : Entity
             if (col.gameObject.GetComponent<Bullet>().HP <= 0)
                 Destroy(col.gameObject);
         }
+        if (HP == 0)
+        {
+            print("coucou");
+            Enemy.OnBulletHit -= Score;
+        }
     }
 
     void Score()
