@@ -12,6 +12,7 @@ TagManager:
   - Undefined
   - FR
   - NbBullet
+  - Attack
   layers:
   - Default
   - TransparentFX

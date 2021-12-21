@@ -478,7 +478,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2883863358944679747}
   - component: {fileID: 2544070751323540990}
-  - component: {fileID: -6380763888450327940}
   m_Layer: 0
   m_Name: Charmeleon
   m_TagString: Untagged
@@ -493,9 +492,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2544070751323540985}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.949621, y: 0.06, z: -4.87}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 3058903960325208412}
   - {fileID: 6933337743944688446}
@@ -521,31 +520,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-6380763888450327940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2544070751323540985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ffe31c6095ec814db3483e50990f62b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 0
-  HP_Max: 0
-  m_MainCamera: {fileID: 0}
-  ScreenPos: {x: 0, y: 0, z: 0}
-  bullet: {fileID: 0}
-  Spell1: {fileID: 0}
-  Spell1_ReloadTime: 0
-  Score_Text: {fileID: 0}
-  m_VerticalSpeed: 0
-  m_HorizontalSpeed: 0
-  timeBetweenBullet: 0
-  score: 0
-  timing: 0
 --- !u!1 &2781035734945981453
 GameObject:
   m_ObjectHideFlags: 0

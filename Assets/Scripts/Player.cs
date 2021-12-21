@@ -20,6 +20,9 @@ public class Player : Entity
     Stopwatch stopWatch = new Stopwatch();
     public float timing;
     public int nbBullet;
+    private short evo;
+    [SerializeField] List<int> EvoCondition;
+    GameObject[] childrens;
     void PlayerControl()
     {
         ScreenPos = Camera.main.WorldToScreenPoint(transform.position);
@@ -49,6 +52,16 @@ public class Player : Entity
     {
         if (Input.GetKeyDown("space"))
             StartCoroutine(Dash(.2f, 30f));
+        if (EvoCondition.Count > 0)
+        {
+           if (score > EvoCondition[0])
+            {
+                transform.GetChild(evo+1).gameObject.SetActive(true);
+                transform.GetChild(evo).gameObject.SetActive(false);
+                EvoCondition.RemoveAt(0);
+                evo ++;
+            }
+        }
     }
 
     void Start()
@@ -58,6 +71,7 @@ public class Player : Entity
         Enemy.OnBulletHit += Score;
         StartCoroutine(SpawnBullet());
         stopWatch.Start();
+        evo = 0;
     }
 
     IEnumerator SpawnBullet()
@@ -84,12 +98,6 @@ public class Player : Entity
                     obj.Add(Instantiate(bullet, transform.position + new Vector3(0f, 0f, 0f), Quaternion.Euler(0f,0f,pos-20f/(float)nbBullet-(10*nbBullet -10 )/(float)nbBullet)));
                 }
             }
-            /*float angle = 0f;
-            for (int i=1; i<nbBullet; i++)
-            {
-                angle = 
-                GameObject obj = Instantiate(bullet, transform.position + new Vector3(0f, 0f, 1f), Quaternion.Euler(0f,0f,0f));
-            }*/
             yield return new WaitForSeconds(timeBetweenBullet);
         }
     }
@@ -109,7 +117,7 @@ public class Player : Entity
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Attack")
         {
             HP -= col.gameObject.GetComponent<Enemy>().Dammage;
         }
