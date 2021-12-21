@@ -1209,7 +1209,7 @@ GameObject:
   - component: {fileID: 7119519447099695202}
   m_Layer: 0
   m_Name: Lapras
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1271,12 +1271,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261463150882d544b9c3b5d47500ceaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
+  HP: 300
   HP_Max: 300
   timeAlive: 500
-  DropTab: []
-  DropsPercentages: 
-  DropRate: 0
   Dammage: 0
   iceBeam: 0
   iceSpikes: 0

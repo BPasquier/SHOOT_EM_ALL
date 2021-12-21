@@ -121,6 +121,10 @@ public class Player : Entity
         {
             HP -= col.gameObject.GetComponent<Enemy>().Dammage;
         }
+        if (col.gameObject.tag == "Boss")
+        {
+            HP -= col.gameObject.GetComponent<Boss>().Dammage;
+        }
         if (col.gameObject.tag == "HP")
         {
             HP += col.gameObject.GetComponent<Bullet>().Dammage;

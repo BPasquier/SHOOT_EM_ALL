@@ -13,6 +13,7 @@ TagManager:
   - FR
   - NbBullet
   - Attack
+  - Boss
   layers:
   - Default
   - TransparentFX

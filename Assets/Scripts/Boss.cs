@@ -2,17 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : Enemy
+public class Boss : Entity
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] protected float timeAlive;
+    protected Animator anim;
+    protected float sinceBorn;
+
+    public delegate void OnHitAction();
+    public static event OnHitAction OnBulletHit;
+    
+    public float Dammage;
+
+
+    protected virtual void Start()
     {
-        
+        sinceBorn = Time.time;
+        anim = GetComponent<Animator>();
+        HP = HP_Max;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void BulletHit()
     {
-        
+        OnBulletHit();
+    }
+
+    protected virtual void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            HP -= collision.gameObject.GetComponent<Bullet>().Dammage;
+            collision.gameObject.GetComponent<Bullet>().HP -=1;
+            if (collision.gameObject.GetComponent<Bullet>().HP <= 0)
+                Destroy(collision.gameObject);
+        }
     }
 }

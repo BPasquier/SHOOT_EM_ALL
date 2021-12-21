@@ -1477,7 +1477,7 @@ GameObject:
   - component: {fileID: 8542887610916057621}
   m_Layer: 0
   m_Name: Squirtle
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1529,12 +1529,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322fea22a4fc7d84b8a14cdc29a1a164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
+  HP: 100
   HP_Max: 100
   timeAlive: 1000
-  DropTab: []
-  DropsPercentages: 
-  DropRate: 0
   Dammage: 3
 --- !u!54 &8542887610916057620
 Rigidbody:

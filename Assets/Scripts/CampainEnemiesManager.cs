@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CampainEnemiesManager : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class CampainEnemiesManager : MonoBehaviour
     [SerializeField] float timeBetweenEnemies = 2.0f;
     public GameObject player;
     int i;
+
+    [SerializeField] private GameObject Menu;
+    [SerializeField] private GameObject Victoire;
+    [SerializeField] private GameObject GOver;
 
     //gestion musiques
     [SerializeField] AudioSource musicManager;
@@ -62,18 +67,18 @@ public class CampainEnemiesManager : MonoBehaviour
                 enemiesPhase = true;
             }
             
-            if (time >= 120) //boss phase 1
+            if (time == 120) //boss phase 1
             {
                 musicManager.clip = musicBoss1;
+                musicManager.Play();
                 enemiesPhase = false;
-                bossHealth[idBoss] = bossTab[0].GetComponent<Entity>().HP;
+                bossHealth[idBoss] = bossTab[idBoss].GetComponent<Entity>().HP;
                 print(bossHealth[idBoss]);
                 bossPhase = true;
             }
 
             if (time >=120 && enemiesPhase == false && bossPhase == false)
             {
-                musicManager.clip = musicRoute;
                 enemiesPhase = true;
                 enemyPercentages[0] = 15;
                 enemyPercentages[1] = 35;
@@ -81,18 +86,27 @@ public class CampainEnemiesManager : MonoBehaviour
                 timeBetweenEnemies -= 0.5f;
             }
 
-            if (time >= 210) //boss phase 2
+            if (time == 210) //boss phase 2
             {
                 idBoss = 1;
                 musicManager.clip = musicBoss2;
+                musicManager.Play();
                 enemiesPhase = false;
-                bossHealth[idBoss] = bossTab[1].GetComponent<Entity>().HP;
+                bossHealth[idBoss] = bossTab[idBoss].GetComponent<Entity>().HP;
                 bossPhase = true;
+            }
+
+            if(time > 210)
+            {
+                Menu.SetActive(false);
+                GOver.SetActive(false);
+                Time.timeScale = 0;
+                Victoire.SetActive(true);
             }
 
             if (enemiesPhase == true)
             {
-                //Cr�e un gameObject al�atoire de la liste en fonction des pourcentages donn�s dans le tab enemyPercentages
+                //Cree un gameObject aleatoire de la liste en fonction des pourcentages donnes dans le tab enemyPercentages
                 int randomPercent = Random.Range(0, 100);
                 int percentSum = 0;
                 for (i = 0; percentSum <= randomPercent; i++)
@@ -107,18 +121,23 @@ public class CampainEnemiesManager : MonoBehaviour
 
             if (bossPhase == true)
             {
-                //Cr�e un gameObject boss
-                GameObject obj = Instantiate(bossTab[idBoss], Camera.main.ScreenToWorldPoint(new Vector3(0f, 0f, 0f)) + new Vector3(Random.Range(-9f, 9f), -Camera.main.transform.position.y, 10f), Quaternion.Euler(0f, 0f, 0f));
-                obj.transform.parent = transform;
-                bossHealthBar.GetComponent<HP_Bar_Script>().joueur = obj.GetComponent<Entity>();
+                //Cree un gameObject boss
+                GameObject boss = Instantiate(bossTab[idBoss], Camera.main.ScreenToWorldPoint(new Vector3(0f, 0f, 0f)) + new Vector3(Random.Range(-9f, 9f), -Camera.main.transform.position.y, 10f), Quaternion.Euler(0f, 0f, 0f));
+                boss.transform.parent = transform;
+                bossHealthBar.GetComponent<HP_Bar_Script>().joueur = boss.GetComponent<Entity>();
                 bossHealthBar.SetActive(true);
 
                 //on attend que le joueur batte le boss et on desactive le mode boss pour revenir a des vagues d'ennemies normales
-                yield return new WaitUntil(() => bossHealth[idBoss] <= 0);
+                yield return new WaitUntil(() => (boss.GetComponent<Entity>().HP <= 0));
+                Destroy(boss);
                 bossPhase = false;
                 enemiesPhase = true;
+                time+=2;
                 bossHealthBar.SetActive(false);
                 timeBetweenEnemies -= 0.7f;
+                //musique d'apres boss
+                musicManager.clip = musicRoute;
+                musicManager.Play();
             }
 
         }
