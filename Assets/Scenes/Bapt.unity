@@ -1764,6 +1764,10 @@ MonoBehaviour:
   - {fileID: 8088517149201067421, guid: bde013347d0dc1c4a88c5380bf42ea8a, type: 3}
   timeBetweenEnemies: 2
   player: {fileID: 559550177}
+  musicManager: {fileID: 0}
+  musicRoute: {fileID: 0}
+  musicBoss1: {fileID: 0}
+  musicBoss2: {fileID: 0}
 --- !u!4 &550001102
 Transform:
   m_ObjectHideFlags: 0
@@ -1844,7 +1848,7 @@ MonoBehaviour:
   m_MainCamera: {fileID: 359544066}
   ScreenPos: {x: 0, y: 0, z: 0}
   bullet: {fileID: 8417748980607237849, guid: 84d1c6c20857f9848ab47fde300fcdfa, type: 3}
-  Spell1: {fileID: 5754357131218933543, guid: 7b6bd78578b7ed04380bb52faa8b156b, type: 3}
+  Spell1: {fileID: 115067535607553136, guid: f7f76931ba217f04da9b76c8e88b63e5, type: 3}
   Spell1_ReloadTime: 10000
   Score_Text: {fileID: 842773704}
   m_VerticalSpeed: 0

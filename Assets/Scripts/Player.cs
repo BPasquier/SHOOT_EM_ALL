@@ -13,14 +13,16 @@ public class Player : Entity
     [SerializeField] private GameObject Spell1;
     [SerializeField] private long Spell1_ReloadTime;
     [SerializeField] private GameObject Score_Text;
+    [SerializeField] private bool SpellFixe;
     [SerializeField] private int m_VerticalSpeed;
     [SerializeField] private int m_HorizontalSpeed;
     [SerializeField] float timeBetweenBullet;
+    [SerializeField] private GameObject Image;
     public int score;
     Stopwatch stopWatch = new Stopwatch();
     public float timing;
     public int nbBullet;
-    private short evo;
+    public short evo;
     [SerializeField] List<int> EvoCondition;
     GameObject[] childrens;
     void PlayerControl()
@@ -34,11 +36,19 @@ public class Player : Entity
             transform.position += new Vector3(0.15f, 0, 0);
         if (Input.GetKey(KeyCode.LeftArrow) == true && ScreenPos.x > 40)
             transform.position += new Vector3(-0.15f, 0, 0);
-        if (Input.GetKey(KeyCode.Keypad0) && timing>1)
+        if (Input.GetKey(KeyCode.Keypad0) && timing>1 && evo >= 2)
         {
             stopWatch.Reset();
             stopWatch.Start();
-            GameObject spell = Instantiate(Spell1, transform.position + new Vector3(0f, 1f, 1f), Quaternion.Euler(90f,0f,0f));
+            if (SpellFixe == false)
+            {
+                GameObject spell = Instantiate(Spell1, transform.position + new Vector3(0f, 1f, 1f), Quaternion.Euler(0f,0f,0f));
+                spell.transform.parent = gameObject.transform;
+            }
+            else
+            {
+                GameObject spell = Instantiate(Spell1, transform.position + new Vector3(0f, 1f, 1f), Quaternion.Euler(90f,0f,0f));    
+            }
         }
     }
 
@@ -60,6 +70,14 @@ public class Player : Entity
                 transform.GetChild(evo).gameObject.SetActive(false);
                 EvoCondition.RemoveAt(0);
                 evo ++;
+                if (evo == 1)
+                {
+                    nbBullet ++;
+                }
+                if (evo == 2)
+                {
+                    Image.gameObject.SetActive(true);
+                }
             }
         }
     }
@@ -71,7 +89,6 @@ public class Player : Entity
         Enemy.OnBulletHit += Score;
         StartCoroutine(SpawnBullet());
         stopWatch.Start();
-        evo = 0;
     }
 
     IEnumerator SpawnBullet()
@@ -100,19 +117,6 @@ public class Player : Entity
             }
             yield return new WaitForSeconds(timeBetweenBullet);
         }
-    }
-
-    int sqrt2 (int nb)
-    {
-        int tmp = nb;
-        int count = 0;
-        while (tmp > 1)
-        {
-            tmp = tmp/2;
-            count++;
-        }
-        print(count);
-        return count;
     }
 
     void OnCollisionEnter(Collision col)
