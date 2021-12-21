@@ -128,7 +128,7 @@ MonoBehaviour:
   HP: 100
   HP_Max: 100
   speed: 0
-  timeAlive: 10
+  timeAlive: 5
   Dammage: 5
   rotation: 0
 --- !u!54 &4688957212120494062
