@@ -6455,12 +6455,14 @@ MonoBehaviour:
   Spell1: {fileID: 5754357131218933543, guid: 7b6bd78578b7ed04380bb52faa8b156b, type: 3}
   Spell1_ReloadTime: 10000
   Score_Text: {fileID: 2050442379}
+  SpellFixe: 1
   m_VerticalSpeed: 0
   m_HorizontalSpeed: 0
   timeBetweenBullet: 0.8
   score: 0
   timing: 0
   nbBullet: 0
+  evo: 2
   EvoCondition: 
 --- !u!95 &1853161886
 Animator:
