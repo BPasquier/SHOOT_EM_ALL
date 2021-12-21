@@ -18,6 +18,7 @@ public class CampainEnemiesManager : MonoBehaviour
     [SerializeField] AudioClip musicRoute;
     [SerializeField] AudioClip musicBoss1;
     [SerializeField] AudioClip musicBoss2;
+    [SerializeField] GameObject bossHealthBar;
 
     //gestion du temps
     float time;
@@ -27,6 +28,7 @@ public class CampainEnemiesManager : MonoBehaviour
 
     private void Start()
     {
+        bossHealthBar.SetActive(false);
         StartCoroutine(SpawnEnemy());
     }
 
@@ -108,11 +110,14 @@ public class CampainEnemiesManager : MonoBehaviour
                 //Cr�e un gameObject boss
                 GameObject obj = Instantiate(bossTab[idBoss], Camera.main.ScreenToWorldPoint(new Vector3(0f, 0f, 0f)) + new Vector3(Random.Range(-9f, 9f), -Camera.main.transform.position.y, 10f), Quaternion.Euler(0f, 0f, 0f));
                 obj.transform.parent = transform;
+                bossHealthBar.GetComponent<HP_Bar_Script>().joueur = obj.GetComponent<Entity>();
+                bossHealthBar.SetActive(true);
 
                 //on attend que le joueur batte le boss et on desactive le mode boss pour revenir a des vagues d'ennemies normales
                 yield return new WaitUntil(() => bossHealth[idBoss] <= 0);
                 bossPhase = false;
                 enemiesPhase = true;
+                bossHealthBar.SetActive(false);
                 timeBetweenEnemies -= 0.7f;
             }
 
