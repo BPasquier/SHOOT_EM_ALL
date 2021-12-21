@@ -11,6 +11,10 @@ public class CampainEnemiesManager : MonoBehaviour
     [SerializeField] float timeBetweenEnemies;
     public GameObject player;
     int i;
+    [SerializeField] AudioSource musicManager;
+    [SerializeField] AudioClip musicRoute;
+    [SerializeField] AudioClip musicBoss1;
+    [SerializeField] AudioClip musicBoss2;
 
     //gestion du temps
     float time;
@@ -54,8 +58,9 @@ public class CampainEnemiesManager : MonoBehaviour
                 enemiesPhase = true;
             }
             
-            if (time >= 120) //bose phase 1
+            if (time >= 120) //boss phase 1
             {
+                musicManager.clip = musicBoss1;
                 enemiesPhase = false;
                 //idBoss = 1;
                 bossPhase = true;
@@ -63,6 +68,7 @@ public class CampainEnemiesManager : MonoBehaviour
 
             if (time >=120 && enemiesPhase == false && bossPhase == false)
             {
+                musicManager.clip = musicRoute;
                 enemiesPhase = true;
                 enemyPercentages[0] = 15;
                 enemyPercentages[1] = 35;
