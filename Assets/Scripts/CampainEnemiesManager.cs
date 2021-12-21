@@ -7,10 +7,13 @@ public class CampainEnemiesManager : MonoBehaviour
 {
     [SerializeField] GameObject[] enemyTab;
     [SerializeField] GameObject[] bossTab;
+    protected float[] bossHealth = new float[2];
     int[] enemyPercentages = new int[3];
-    [SerializeField] float timeBetweenEnemies;
+    [SerializeField] float timeBetweenEnemies = 2.0f;
     public GameObject player;
     int i;
+
+    //gestion musiques
     [SerializeField] AudioSource musicManager;
     [SerializeField] AudioClip musicRoute;
     [SerializeField] AudioClip musicBoss1;
@@ -21,7 +24,6 @@ public class CampainEnemiesManager : MonoBehaviour
     bool enemiesPhase;
     bool bossPhase;
     int idBoss = 0;
-    bool bossDeath = false;
 
     private void Start()
     {
@@ -62,7 +64,8 @@ public class CampainEnemiesManager : MonoBehaviour
             {
                 musicManager.clip = musicBoss1;
                 enemiesPhase = false;
-                //idBoss = 1;
+                bossHealth[idBoss] = bossTab[0].GetComponent<Entity>().HP;
+                print(bossHealth[idBoss]);
                 bossPhase = true;
             }
 
@@ -76,9 +79,18 @@ public class CampainEnemiesManager : MonoBehaviour
                 timeBetweenEnemies -= 0.5f;
             }
 
+            if (time >= 210) //boss phase 2
+            {
+                idBoss = 1;
+                musicManager.clip = musicBoss2;
+                enemiesPhase = false;
+                bossHealth[idBoss] = bossTab[1].GetComponent<Entity>().HP;
+                bossPhase = true;
+            }
+
             if (enemiesPhase == true)
             {
-                //Crée un gameObject aléatoire de la liste en fonction des pourcentages donnés dans le tab enemyPercentages
+                //Crï¿½e un gameObject alï¿½atoire de la liste en fonction des pourcentages donnï¿½s dans le tab enemyPercentages
                 int randomPercent = Random.Range(0, 100);
                 int percentSum = 0;
                 for (i = 0; percentSum <= randomPercent; i++)
@@ -88,19 +100,20 @@ public class CampainEnemiesManager : MonoBehaviour
                 GameObject obj = Instantiate(enemyTab[i - 1], Camera.main.ScreenToWorldPoint(new Vector3(0f, 0f, 0f)) + new Vector3(Random.Range(-9f, 9f), -Camera.main.transform.position.y, 10f), Quaternion.Euler(0f, 180f, 0f));
                 obj.transform.parent = transform;
                 yield return new WaitForSeconds(timeBetweenEnemies);
-
                 time += 2;
             }
 
             if (bossPhase == true)
             {
-                //Crée un gameObject boss
+                //Crï¿½e un gameObject boss
                 GameObject obj = Instantiate(bossTab[idBoss], Camera.main.ScreenToWorldPoint(new Vector3(0f, 0f, 0f)) + new Vector3(Random.Range(-9f, 9f), -Camera.main.transform.position.y, 10f), Quaternion.Euler(0f, 0f, 0f));
                 obj.transform.parent = transform;
 
                 //on attend que le joueur batte le boss et on desactive le mode boss pour revenir a des vagues d'ennemies normales
-                yield return new WaitUntil(() => bossDeath == true);
+                yield return new WaitUntil(() => bossHealth[idBoss] <= 0);
                 bossPhase = false;
+                enemiesPhase = true;
+                timeBetweenEnemies -= 0.7f;
             }
 
         }
